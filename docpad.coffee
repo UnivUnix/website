@@ -14,15 +14,24 @@ docpadConfig = {
 			url: "http://univunix.com"
 			title: "UnivUnix"
 			description: """
-				El portal unificado de Unix y derivados. Ahora con extra de electrónica e impresión 3D
+				El portal unificado de Unix, sus derivados y el software libre. Ahora con extra de electrónica e impresión 3D.
 				"""
 			keywords: """
-				unix, linux, mac, bsd, software, libre, electrónica, impresión, 3D
+				unix, gnu, linux, mac, bsd, software, libre, electrónica, impresión, 3D
 				"""
-	
-	#TemplateData:
+
 		# Helper functions
-	
+		getDocumentTitle: ->
+			if @document.title
+				"#{@document.title} | #{@site.title}"
+			else
+				"#{@site.title}"
+				
+		getDocumentCssClass: ->
+			if @document.layout
+				"#{@document.cssClass}"
+			else
+				"landing"
 	#Plugins configuration
 	
 	#Event configuration

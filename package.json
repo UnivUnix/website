@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Third restart of UnivUnix website using Docpad as content generator",
   "dependencies": {
-    "docpad": "~6.78.5",
+    "docpad": "~6.78.6",
     "docpad-plugin-ect": "~2.0.1",
     "docpad-plugin-livereload": "~2.7.1",
     "docpad-plugin-marked": "~2.3.0",
