@@ -3,6 +3,7 @@
 	Landed by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Adaptation for univunix.com by Ángel González | @Aglezabad
 -->
 
 
@@ -10,12 +11,18 @@
     <head>
         <title><%= @getDocumentTitle() %></title>
         <%- @getBlock("meta").toHTML() %>
-        <%- @getBlock("styles").add(["/styles/main.css"]).toHTML() %>
-        <!--<meta charset="utf-8" />-->
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
-        <!--[if lte IE 8]><script src="vendor/ie/html5shiv.js"></script><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="styles/ie9.css" /><![endif]-->
-        <!--[if lte IE 8]><link rel="stylesheet" href="styles/ie8.css" /><![endif]-->
+        <%- @getBlock("styles")
+            .add([
+                "/styles/main.css"
+            ]).toHTML()
+        %>
+        <!--[if lte IE 8]>
+            <script src="/vendor/ie/html5shiv.js"></script>
+            <link rel="stylesheet" href="/styles/ie8.css"/>
+        <![endif]-->
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" href="/styles/ie9.css"/>
+        <![endif]-->
     </head>
     <body class="<%= @getDocumentCssClass() %>">
 		<%- @content %>
@@ -30,5 +37,8 @@
 				"/scripts/main.js"
 			]).toHTML()
 		%>
+        <!--[if lte IE 8]>
+            <script src="vendor/ie/respond.min.js"></script>
+        <![endif]-->
     </body>
 </html>

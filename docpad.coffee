@@ -16,9 +16,18 @@ docpadConfig = {
 			description: """
 				El portal unificado de Unix, sus derivados y el software libre. Ahora con extra de electrónica e impresión 3D.
 				"""
-			keywords: """
-				unix, gnu, linux, mac, bsd, software, libre, electrónica, impresión, 3D
-				"""
+			keywords: [
+                "Unix",
+                "GNU",
+                "Linux",
+                "Mac",
+                "BSD",
+                "software",
+                "libre",
+                "electrónica",
+                "impresión",
+                "3D"
+            ]
 
 		# Helper functions
 		getDocumentTitle: ->
@@ -32,6 +41,9 @@ docpadConfig = {
 				"#{@document.cssClass}"
 			else
 				"landing"
+        
+        mergeKeywords: ->
+            @site.keywords.concat(@document.keywords or []). join(", ");
 	#Plugins configuration
 	
 	#Event configuration

@@ -7,8 +7,7 @@
     "docpad-plugin-ect": "~2.0.1",
     "docpad-plugin-livereload": "~2.7.1",
     "docpad-plugin-marked": "~2.3.0",
-    "docpad-plugin-nodesass": "~2.8.2",
-    "docpad-plugin-sass": "~2.7.4"
+    "docpad-plugin-nodesass": "~2.8.2"
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {
