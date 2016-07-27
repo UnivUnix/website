@@ -3,20 +3,20 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-	regenerateDelay: 2000
-	ignoreHiddenFiles: true
-	
-	port: 9778
-	checkVersion: true
-	
-	templateData:
-		site:
-			url: "http://univunix.com"
-			title: "UnivUnix"
-			description: """
-				El portal unificado de Unix, sus derivados y el software libre. Ahora con extra de electrónica e impresión 3D.
-				"""
-			keywords: [
+    regenerateDelay: 2000
+    ignoreHiddenFiles: true
+
+    port: 9778
+    checkVersion: true
+
+    templateData:
+        site:
+            url: "http://univunix.com"
+            title: "UnivUnix"
+            description: """
+                El portal unificado de Unix, sus derivados y el software libre. Ahora con extra de electrónica e impresión 3D.
+                """
+            keywords: [
                 "Unix",
                 "GNU",
                 "Linux",
@@ -29,36 +29,49 @@ docpadConfig = {
                 "3D"
             ]
 
-		# Helper functions
-		getDocumentTitle: ->
-			if @document.title
-				"#{@document.title} | #{@site.title}"
-			else
-				"#{@site.title}"
-				
-		getDocumentCssClass: ->
-			if @document.layout
-				"#{@document.cssClass}"
-			else
-				"landing"
+        # Helper functions
+        getDocumentTitle: ->
+            if @document.title
+                "#{@document.title} | #{@site.title}"
+            else
+                "#{@site.title}"
+
+        getDocumentCssClass: ->
+            if @document.layout
+                "#{@document.cssClass}"
+            else
+                "landing"
         
         mergeKeywords: ->
             @site.keywords.concat(@document.keywords or []). join(", ");
-	#Plugins configuration
-	
-	#Event configuration
-	
-	#Environment configuration
-	localeCode: 'es'
-	env: 'development'
-	
-	environments:
-		development:
-			hostname: 'localhost'
-			maxAge: false
-			port: 9008
-		production:
-			hostname: 'univunix.com'
+        
+        formatURL: (url) ->
+            url
+            .replace(/\s/g, "%20")
+            .replace(/&/g, "&amp;")
+        
+        getFullURL: (relativeURL) ->
+            formatURL(@site.url + url)
+        
+        
+        
+    #Plugins configuration
+    
+    #Event configuration
+
+    #Environment configuration
+    localeCode: 'es'
+    env: 'development'
+
+    environments:
+        development:
+            site:
+                url: 'localhost'
+            hostname: 'localhost'
+            maxAge: false
+            port: 9008
+        production:
+            hostname: 'univunix.com'
 }
 
 # Export the DocPad Configuration
