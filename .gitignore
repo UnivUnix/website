@@ -40,4 +40,4 @@ jspm_packages
 .idea
 
 #No out
-out/
+out
