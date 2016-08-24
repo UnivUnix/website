@@ -53,9 +53,6 @@ docpadConfig = {
         getFullURL: (relativeURL) ->
             formatURL(@site.url + url)
         
-    #Collections
-    collections:
-        
         
     #Plugins configuration
     
