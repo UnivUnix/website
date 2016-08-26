@@ -3,74 +3,87 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-    regenerateDelay: 2000
-    ignoreHiddenFiles: true
+  regenerateDelay: 2000
+  ignoreHiddenFiles: true
 
-    port: 9778
-    checkVersion: true
+  port: 9778
+  checkVersion: true
 
-    templateData:
-        site:
-            url: "http://univunix.com"
-            title: "UnivUnix"
-            description: """
-                El portal unificado de Unix, sus derivados y el software libre. Ahora con extra de electrónica e impresión 3D.
-                """
-            keywords: [
-                "Unix",
-                "GNU",
-                "Linux",
-                "Mac",
-                "BSD",
-                "software",
-                "libre",
-                "electrónica",
-                "impresión",
-                "3D"
-            ]
+  templateData:
+    site:
+      url: "http://univunix.com"
+      title: "UnivUnix"
+      description:
+        "El portal unificado de Unix, sus derivados y el software libre.
+        Ahora con extra de electrónica e impresión 3D."
+      keywords: [
+        "Unix",
+        "GNU",
+        "Linux",
+        "Mac",
+        "BSD",
+        "software",
+        "libre",
+        "electrónica",
+        "impresión",
+        "3D"
+      ]
 
-        # Helper functions
-        getDocumentTitle: ->
-            if @document.title
-                "#{@document.title} | #{@site.title}"
-            else
-                "#{@site.title}"
+    # Helper functions
+    getDocumentTitle: ->
+      if @document.title
+        "#{@document.title} | #{@site.title}"
+      else
+        "#{@site.title}"
 
-        getDocumentCssClass: ->
-            if @document.layout
-                "#{@document.cssClass}"
-            else
-                "landing"
-        
-        mergeKeywords: ->
-            @site.keywords.concat(@document.keywords or []). join(", ");
-        
-        formatURL: (url) ->
-            url
-            .replace(/\s/g, "%20")
-            .replace(/&/g, "&amp;")
-        
-        getFullURL: (relativeURL) ->
-            formatURL(@site.url + url)
-        
-        
-    #Plugins configuration
+    getDocumentCssClass: ->
+      if @document.layout
+        "#{@document.cssClass}"
+      else
+        "landing"
+
+    mergeKeywords: ->
+      @site.keywords.concat(@document.keywords or [])
+      .join(", ")
+
+    formatURL: (url) ->
+      url
+      .replace(/\s/g, "%20")
+      .replace(/&/g, "&amp;")
+
+    getFullURL: (relativeURL) ->
+      formatURL(@site.url + url)
+
+  collections:
+    posts: ->
+      @getCollection('render')
+      .findAllLive({relativeOutDirPath: 'articles'}, [{date: -1}])
     
-    #Event configuration
+    postsEN: ->
+      @getCollection('posts')
+      .findAllLive({relativeOutDirPath: 'en'}, [{date: -1}])
+    
+    postsES: ->
+      @getCollection('posts')
+      .findAllLive({relativeOutDirPath: 'es'}, [{date: -1}])
 
-    #Environment configuration
-    localeCode: 'es'
-    env: 'development'
+  #Plugins configuration
 
-    environments:
-        development:
-            site:
-                url: 'localhost'
-            hostname: 'localhost'
-            maxAge: false
-            port: 9008
-        production:
-            hostname: 'univunix.com'
+  #Event configuration
+
+  #Environment configuration
+  localeCode: 'es'
+  env: 'development'
+
+  environments:
+    development:
+      site:
+        url: 'localhost'
+      hostname: 'localhost'
+      maxAge: false
+      port: 9008
+    production:
+      hostname: 'univunix.com'
 }
 
 # Export the DocPad Configuration
