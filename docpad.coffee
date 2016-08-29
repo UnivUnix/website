@@ -55,17 +55,25 @@ docpadConfig = {
       formatURL(@site.url + url)
 
   collections:
-    posts: ->
+    articles: ->
       @getCollection('render')
       .findAllLive({relativeOutDirPath: 'articles'}, [{date: -1}])
     
-    postsEN: ->
+    articlesEN: ->
       @getCollection('posts')
       .findAllLive({relativeOutDirPath: 'en'}, [{date: -1}])
     
-    postsES: ->
+    articlesES: ->
       @getCollection('posts')
       .findAllLive({relativeOutDirPath: 'es'}, [{date: -1}])
+      
+    pages: ->
+      @getCollection('render')
+      .findAllLive({relativeOutDirPath: 'pages'}, [{date: -1}])
+    
+    categories: ->
+      @getCollection('render')
+      .findAllLive({relativeOutDirPath: 'categories'}, [{date: -1}])
 
   #Plugins configuration
 
