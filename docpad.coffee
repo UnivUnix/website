@@ -36,11 +36,8 @@ docpadConfig = {
       else
         "#{@site.title}"
 
-    getDocumentCssClass: ->
-      if @document.layout
-        "#{@document.cssClass}"
-      else
-        "landing"
+    getDocumentDescription: ->
+      "#{@site.description}"
 
     mergeKeywords: ->
       @site.keywords.concat(@document.keywords or [])
@@ -52,28 +49,34 @@ docpadConfig = {
       .replace(/&/g, "&amp;")
 
     getFullURL: (relativeURL) ->
-      formatURL(@site.url + url)
+      @formatURL(@site.url + relativeURL)
 
   collections:
     articles: ->
       @getCollection('render')
       .findAllLive({relativeOutDirPath: 'articles'}, [{date: -1}])
-    
+      .on "add", (model) ->
+        model.setMetaDefaults({layout:"post"})
+
     articlesEN: ->
       @getCollection('posts')
       .findAllLive({relativeOutDirPath: 'en'}, [{date: -1}])
-    
+
     articlesES: ->
       @getCollection('posts')
       .findAllLive({relativeOutDirPath: 'es'}, [{date: -1}])
-      
+
     pages: ->
       @getCollection('render')
       .findAllLive({relativeOutDirPath: 'pages'}, [{date: -1}])
-    
+      .on "add", (model) ->
+        model.setMetaDefaults({layout:"page"})
+
     categories: ->
       @getCollection('render')
       .findAllLive({relativeOutDirPath: 'categories'}, [{date: -1}])
+      .on "add", (model) ->
+        model.setMetaDefaults({layout:"category"})
 
   #Plugins configuration
 

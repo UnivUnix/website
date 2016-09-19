@@ -2,36 +2,38 @@
 layout: default
 ---
 
-<div id="page-wrapper">
-    <!-- Header -->
-    <header id="header">
-        <h1 id="logo"><a href="/">UnivUnix</a></h1>
-            <nav id="nav">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Layouts</a>
-                        <ul>
-                            <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                            <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                            <li><a href="no-sidebar.html">No Sidebar</a></li>
-                            <li>
-									<a href="#">Submenu</a>
-									<ul>
-										<li><a href="#">Option 1</a></li>
-										<li><a href="#">Option 2</a></li>
-										<li><a href="#">Option 3</a></li>
-										<li><a href="#">Option 4</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="elements.html">Elements</a></li>
-						<li><a href="#" class="button special">Sign Up</a></li>
-					</ul>
-				</nav>
-			</header>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <% for num in [3..1] : %>
+          <span class="icon-bar"></span>
+        <% end %>
+      </button>
+      <a class="navbar-brand" href="<%= @getFullURL('/') %>">
+        UnivUnix
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active">
+          <a href="#">
+            Home
+          </a>
+        </li>
+      </ul>
+      <div role="group" class="btn-group navbar-right">
+        <a class="btn btn-default navbar-btn" href="http://twitter.com/univunix" target="_blank">
+          <span class="fa fa-twitter"></span>
+        </a>
+        <a class="btn btn-default navbar-btn"  href="http://plus.google.com/b/107511248169675151833/107511248169675151833?rel=publisher" target="_blank">
+          <span class="fa fa-google-plus"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <%- @content %>
 </div>
