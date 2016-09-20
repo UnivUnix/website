@@ -6,9 +6,9 @@ layout: default
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
+        <i class="sr-only">Toggle navigation</i>
         <% for num in [3..1] : %>
-          <span class="icon-bar"></span>
+          <i class="icon-bar"></i>
         <% end %>
       </button>
       <a class="navbar-brand" href="<%= @getFullURL('/') %>">
@@ -25,10 +25,16 @@ layout: default
       </ul>
       <div role="group" class="btn-group navbar-right">
         <a class="btn btn-default navbar-btn" href="http://twitter.com/univunix" target="_blank">
-          <span class="fa fa-twitter"></span>
+          <i class="fa fa-fw fa-lg fa-twitter"></i>
         </a>
         <a class="btn btn-default navbar-btn"  href="http://plus.google.com/b/107511248169675151833/107511248169675151833?rel=publisher" target="_blank">
-          <span class="fa fa-google-plus"></span>
+          <i class="fa fa-fw fa-lg fa-google-plus"></i>
+        </a>
+        <a class="btn btn-default navbar-btn"  href="https://github.com/UnivUnix" target="_blank">
+          <i class="fa fa-fw fa-lg fa-github"></i>
+        </a>
+        <a class="btn btn-default navbar-btn"  href="#" target="_blank">
+          <i class="fa fa-fw fa-lg fa-rss"></i>
         </a>
       </div>
     </div>
@@ -37,3 +43,6 @@ layout: default
 <div class="container-fluid">
   <%- @content %>
 </div>
+<footer class="info-footer">
+  
+</footer>
