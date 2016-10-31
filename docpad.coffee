@@ -88,8 +88,9 @@ docpadConfig = {
 
   environments:
     development:
-      site:
-        url: 'localhost'
+      templateData:
+        site:
+          url: "http://localhost:9008"
       hostname: 'localhost'
       maxAge: false
       port: 9008

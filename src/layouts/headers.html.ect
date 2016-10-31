@@ -2,47 +2,50 @@
 layout: default
 ---
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <i class="sr-only">Toggle navigation</i>
-        <% for num in [3..1] : %>
-          <i class="icon-bar"></i>
-        <% end %>
-      </button>
-      <a class="navbar-brand" href="<%= @getFullURL('/') %>">
-        UnivUnix
-      </a>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li class="active">
-          <a href="#">
-            Home
-          </a>
+<header id="unvx-header" class="pure-g">
+  <div class="pure-u-1">
+    <nav class="pure-menu pure-menu-horizontal">
+      <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">UnivUnix</a>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="socialMenu" class="pure-menu-link">RRSS</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item">
+                  <a href="https://twitter.com/univunix" class="pure-menu-link" target="_blank">
+                    <i class="fa fa-fw fa-twitter"></i>
+                    Twitter
+                  </a>
+                </li>
+                <li class="pure-menu-item">
+                  <a href="https://plus.google.com/+Univunix?rel=publisher" class="pure-menu-link" target="_blank">
+                    <i class="fa fa-fw fa-google-plus"></i>
+                    Google +
+                  </a>
+                </li>
+                <li class="pure-menu-item">
+                  <a href="https://github.com/UnivUnix" class="pure-menu-link" target="_blank">
+                    <i class="fa fa-fw fa-github"></i>
+                    Github
+                  </a>
+                </li>
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link" target="_blank">
+                    <i class="fa fa-fw fa-rss"></i>
+                    RSS
+                  </a>
+                </li>
+            </ul>
         </li>
       </ul>
-      <div role="group" class="btn-group navbar-right">
-        <a class="btn btn-default navbar-btn" href="http://twitter.com/univunix" target="_blank">
-          <i class="fa fa-fw fa-lg fa-twitter"></i>
-        </a>
-        <a class="btn btn-default navbar-btn"  href="http://plus.google.com/b/107511248169675151833/107511248169675151833?rel=publisher" target="_blank">
-          <i class="fa fa-fw fa-lg fa-google-plus"></i>
-        </a>
-        <a class="btn btn-default navbar-btn"  href="https://github.com/UnivUnix" target="_blank">
-          <i class="fa fa-fw fa-lg fa-github"></i>
-        </a>
-        <a class="btn btn-default navbar-btn"  href="#" target="_blank">
-          <i class="fa fa-fw fa-lg fa-rss"></i>
-        </a>
-      </div>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
 <div class="container-fluid">
   <%- @content %>
 </div>
-<footer class="info-footer">
-  
+<footer id="unvx-footer" class="pure-g">
+
 </footer>

@@ -13,29 +13,18 @@
     <!--Meta-->
     <%- @getBlock("meta").toHTML() %>
 
-    <!--[if lte IE 8]>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <script src="/vendor/ie/html5shiv.js"></script>
-    <![endif]-->
-
     <%- @getBlock("styles")
       .add([
-        "/styles/bootstrap.min.css",
-        "/styles/font-awesome.min.css",
-        "/styles/custom-ui.css"
+        "/styles/pure-min.css",
+        "/styles/grids-responsive-min.css",
+        "/styles/font-awesome.min.css"
         ]).toHTML()
     %>
   </head>
   <body>
     <%- @content %>
     <%- @getBlock("scripts")
-      .add([
-        "/vendor/jquery.min.js",
-        "/vendor/bootstrap.min.js"
-      ]).toHTML()
+      .toHTML()
     %>
-    <!--[if lte IE 8]>
-      <script src="/vendor/ie/respond.min.js"></script>
-    <![endif]-->
   </body>
 </html>
