@@ -13,18 +13,15 @@
     <!--Meta-->
     <%- @getBlock("meta").toHTML() %>
 
-    <%- @getBlock("styles")
-      .add([
-        "/styles/pure-min.css",
-        "/styles/grids-responsive-min.css",
-        "/styles/font-awesome.min.css"
+    <%- @getBlock("styles").add([
+          "/styles/pure-min.css",
+          "/styles/grids-responsive-min.css",
+          "/styles/font-awesome.min.css"
         ]).toHTML()
     %>
   </head>
   <body>
     <%- @content %>
-    <%- @getBlock("scripts")
-      .toHTML()
-    %>
+    <%- @getBlock("scripts").toHTML() %>
   </body>
 </html>

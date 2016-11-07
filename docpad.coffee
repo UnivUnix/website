@@ -53,10 +53,10 @@ docpadConfig = {
 
   collections:
     articles: ->
-      @getCollection('render')
+      @getCollection('documents')
       .findAllLive({relativeOutDirPath: 'articles'}, [{date: -1}])
       .on "add", (model) ->
-        model.setMetaDefaults({layout:"post"})
+        #model.setMetaDefaults({layout:"post"})
 
     articlesEN: ->
       @getCollection('posts')
@@ -67,16 +67,16 @@ docpadConfig = {
       .findAllLive({relativeOutDirPath: 'es'}, [{date: -1}])
 
     pages: ->
-      @getCollection('render')
+      @getCollection('documents')
       .findAllLive({relativeOutDirPath: 'pages'}, [{date: -1}])
       .on "add", (model) ->
-        model.setMetaDefaults({layout:"page"})
+        #model.setMetaDefaults({layout:"page"})
 
     categories: ->
-      @getCollection('render')
+      @getCollection('documents')
       .findAllLive({relativeOutDirPath: 'categories'}, [{date: -1}])
       .on "add", (model) ->
-        model.setMetaDefaults({layout:"category"})
+        #model.setMetaDefaults({layout:"category"})
 
   #Plugins configuration
 
