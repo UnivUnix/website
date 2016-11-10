@@ -27,6 +27,16 @@ html
     width: 100%;
 }
 
+.unvx-header .title-first
+{
+
+}
+
+.unvx-header .title-second
+{
+  
+}
+
 .unvx-main-menu
 {
     display: flex;
@@ -36,6 +46,12 @@ html
     box-shadow: 0 1px 1px rgba(0,0,0, .10);
 
     justify-content: space-between;
+}
+
+.unvx-main-menu .pure-menu-heading img
+{
+  margin: -10px 0 -10px -10px;
+  padding-top: 3px;
 }
 
 .unvx-main-menu .pure-menu-item a

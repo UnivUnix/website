@@ -5,7 +5,11 @@ layout: default
 <header class="pure-g unvx-header">
   <div class="pure-u-1">
     <nav class="unvx-main-menu pure-menu pure-menu-horizontal">
-      <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">UnivUnix</a>
+      <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">
+        <img src="http://placehold.it/32"/>
+        <span class="title-first">Univ</span>
+        <span class="title-second">Unix</span>
+      </a>
       <ul class="pure-menu-list">
         <% for item in @getCollection('categories').toJSON() : %>
           <li class="pure-menu-item"><a href="<%= item.url %>" class="pure-menu-link"><%= item.title %></a></li>
