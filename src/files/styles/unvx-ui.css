@@ -1,5 +1,88 @@
-* {
+*
+{
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html
+{
+    background-color:#dedede;
+    background-image: linear-gradient(30deg, #bebebe 12%, transparent 12.5%, transparent 87%, #bebebe 87.5%, #bebebe),
+    linear-gradient(150deg, #bebebe 12%, transparent 12.5%, transparent 87%, #bebebe 87.5%, #bebebe),
+    linear-gradient(30deg, #bebebe 12%, transparent 12.5%, transparent 87%, #bebebe 87.5%, #bebebe),
+    linear-gradient(150deg, #bebebe 12%, transparent 12.5%, transparent 87%, #bebebe 87.5%, #bebebe),
+    linear-gradient(60deg, #fefefe 25%, transparent 25.5%, transparent 75%, #fefefe 75%, #fefefe),
+    linear-gradient(60deg, #fefefe 25%, transparent 25.5%, transparent 75%, #fefefe 75%, #fefefe);
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    background-size:80px 140px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.unvx-header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.unvx-main-menu
+{
+    display: flex;
+    padding: .5em;
+    background: #00778c;
+    border-bottom: 0.1em solid #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0, .10);
+
+    justify-content: space-between;
+}
+
+.unvx-main-menu .pure-menu-item a
+{
+    background: #00778c;
+    color: #fefefe;
+    font-weight: 400;
+}
+
+.unvx-main-menu .pure-menu-item a:hover
+{
+    background: #fefefe;
+    color: #00778c;
+}
+
+.unvx-main-menu .pure-menu-children
+{
+    right: 0;
+    left: initial;
+}
+
+.unvx-footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.unvx-footer-menu
+{
+    padding: .5em;
+    background: #2d2d2d;
+    border-top: 0.1em solid #fff;
+    box-shadow: 1px 1px 0 rgba(0,0,0, .10);
+    text-align: center;
+}
+
+.unvx-footer-menu .pure-menu-item a
+{
+    background: #2d2d2d;
+    color: #fefefe;
+    font-weight: 400;
+}
+
+.unvx-footer-menu .pure-menu-item a:hover
+{
+    background: #fefefe;
+    color: #2d2d2d;
 }
