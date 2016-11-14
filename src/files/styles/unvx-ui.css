@@ -29,20 +29,26 @@ html
 
 .unvx-header .title-first
 {
-
+  margin: -10px auto;
+  color: #fefefe;
+  font-weight: 100;
+  font-size: 24px;
 }
 
 .unvx-header .title-second
 {
-  
+  margin: -10px auto;
+  color: #fefefe;
+  font-weight: 700;
+  font-size: 24px;
 }
 
 .unvx-main-menu
 {
     display: flex;
     padding: .5em;
+    border-bottom: 0.1em solid #fefefe;
     background: #00778c;
-    border-bottom: 0.1em solid #fff;
     box-shadow: 0 1px 1px rgba(0,0,0, .10);
 
     justify-content: space-between;
@@ -50,8 +56,8 @@ html
 
 .unvx-main-menu .pure-menu-heading img
 {
-  margin: -10px 0 -10px -10px;
-  padding-top: 3px;
+  margin: -0.5em 0 -0.5em -0.5em;
+  padding-top: 0.1em;
 }
 
 .unvx-main-menu .pure-menu-item a
@@ -84,8 +90,8 @@ html
 .unvx-footer-menu
 {
     padding: .5em;
+    border-top: 0.1em solid #fefefe;
     background: #2d2d2d;
-    border-top: 0.1em solid #fff;
     box-shadow: 1px 1px 0 rgba(0,0,0, .10);
     text-align: center;
 }
