@@ -30,14 +30,12 @@ html
 .unvx-header .title-first
 {
   margin-right: -0.1em;
-  color: #fefefe;
   font-weight: 100;
 }
 
 .unvx-header .title-second
 {
   margin-left: -0.1em;
-  color: #fefefe;
   font-weight: 700;
 }
 
@@ -59,14 +57,14 @@ html
   height: 2em;
 }
 
-.unvx-main-menu .pure-menu-item a
+.unvx-main-menu .pure-menu-item a, .unvx-main-menu .pure-menu-heading
 {
     background: #00778c;
     color: #fefefe;
     font-weight: 400;
 }
 
-.unvx-main-menu .pure-menu-item a:hover
+.unvx-main-menu .pure-menu-item a:hover, .unvx-main-menu .pure-menu-heading:hover
 {
     background: #fefefe;
     color: #00778c;
@@ -80,22 +78,41 @@ html
 
 .unvx-content
 {
-  padding: 3.250em 0;
+  padding: 3.750em 0.5em;
   font-family: 'Lato', sans-serif;
 }
 
-.unvx-article-link
+.unvx-article-item
 {
-  margin: 1em;
+  margin: 0.2em;
+}
+
+.unvx-article-item header
+{
   background: #00778c;
   color: #fefefe;
+  padding: 0.25em 0.5em;
+
 }
 
-.unvx-article-link h2
+.unvx-article-item .unvx-item-title
+{
+  margin: initial;
+}
+
+.unvx-article-item header a
 {
   font-size: 1.25em;
+  font-weight: 100;
+  text-decoration: none;
+  color: inherit;
 }
 
+.unvx-article-item header a:hover
+{
+  text-decoration: underline;
+  color: inherit;
+}
 .unvx-footer
 {
     position: fixed;
