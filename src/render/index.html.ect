@@ -1,0 +1,23 @@
+---
+layout: body
+---
+
+<% count = 0 %>
+<% for item in @getCollection('articles').toJSON() : %>
+  <% if count%4 is 0 : %>
+    <div class="pure-g">
+  <% end %>
+  <div class="pure-u-1-4">
+    <article id="<%= item.id %>" class="unvx-article-link">
+      <header>
+        <h2><a href="<%= item.url %>"><%= item.title %></a></h2>
+      </header>
+      <footer>
+      </footer>
+    </article>
+  </div>
+  <% if count%4 is 4 or  : %>
+    </div>
+  <% end %>
+  <% count++ %>
+<% end %>

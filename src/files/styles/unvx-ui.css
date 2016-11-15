@@ -29,18 +29,16 @@ html
 
 .unvx-header .title-first
 {
-  margin: -10px auto;
+  margin-right: -0.1em;
   color: #fefefe;
   font-weight: 100;
-  font-size: 24px;
 }
 
 .unvx-header .title-second
 {
-  margin: -10px auto;
+  margin-left: -0.1em;
   color: #fefefe;
   font-weight: 700;
-  font-size: 24px;
 }
 
 .unvx-main-menu
@@ -56,8 +54,9 @@ html
 
 .unvx-main-menu .pure-menu-heading img
 {
-  margin: -0.5em 0 -0.5em -0.5em;
-  padding-top: 0.1em;
+  margin: -0.4em 0 -0.6em -0.5em;
+  width: 2em;
+  height: 2em;
 }
 
 .unvx-main-menu .pure-menu-item a
@@ -79,6 +78,24 @@ html
     left: initial;
 }
 
+.unvx-content
+{
+  padding: 3.250em 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.unvx-article-link
+{
+  margin: 1em;
+  background: #00778c;
+  color: #fefefe;
+}
+
+.unvx-article-link h2
+{
+  font-size: 1.25em;
+}
+
 .unvx-footer
 {
     position: fixed;
@@ -90,7 +107,7 @@ html
 .unvx-footer-menu
 {
     padding: .5em;
-    border-top: 0.1em solid #fefefe;
+    border-top: .1em solid #fefefe;
     background: #2d2d2d;
     box-shadow: 1px 1px 0 rgba(0,0,0, .10);
     text-align: center;

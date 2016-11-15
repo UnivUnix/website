@@ -3,7 +3,7 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-  regenerateDelay: 2000
+  regenerateDelay: 0
   ignoreHiddenFiles: true
 
   port: 9778
@@ -15,7 +15,7 @@ docpadConfig = {
       title: "UnivUnix"
       description:
         "El portal unificado de Unix, sus derivados y el software libre.
-        Ahora con extra de electrónica e impresión 3D."
+        Ahora con temas mas allá del software."
       keywords: [
         "Unix",
         "GNU",
@@ -54,17 +54,9 @@ docpadConfig = {
   collections:
     articles: ->
       @getCollection('documents')
-      .findAllLive({relativeOutDirPath: 'articles'}, [{date: -1}])
+      .findAllLive({relativeOutDirPath: /articles[\/\\]\w+/}, [{date: -1}])
       .on "add", (model) ->
         #model.setMetaDefaults({layout:"post"})
-
-    articlesEN: ->
-      @getCollection('posts')
-      .findAllLive({relativeOutDirPath: 'en'}, [{date: -1}])
-
-    articlesES: ->
-      @getCollection('posts')
-      .findAllLive({relativeOutDirPath: 'es'}, [{date: -1}])
 
     pages: ->
       @getCollection('documents')

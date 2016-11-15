@@ -4,11 +4,23 @@
   <head>
     <title><%= @getDocumentTitle() %></title>
     <!--Humans.txt-->
-    <link type="text/plain" rel="author" href="http://www.univunix.com/humans.txt" />
+    <link type="text/plain" rel="author" href="http://www.univunix.com/humans.txt">
 
-    <!--Icon links-->
-    <link rel="shortcut icon" href="/icons/favicon.png">
-    <link rel="apple-touch-icon" href="/icons/apple-icon.png">
+    <!--Favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/icons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/icons/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="UnivUnix">
+    <meta name="application-name" content="UnivUnix">
+    <meta name="msapplication-TileColor" content="#00778c">
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#00778c">
 
     <!--Meta-->
     <%- @getBlock("meta").toHTML() %>
