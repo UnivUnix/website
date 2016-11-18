@@ -3,8 +3,28 @@
 <html>
   <head>
     <title><%= @getDocumentTitle() %></title>
+
+    <!--Avoiding FOUC-->
+    <style type="text/css">
+      .fouc-fix { display: none; }
+    </style>
+    <script type="text/javascript">
+      try {
+        var htmlElem = document.querySelector('html');
+        htmlElem.classList.add('fouc-fix');
+        document.addEventListener('DOMContentLoaded', function(event) {
+          htmlElem.classList.remove('fouc-fix');
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    </script>
+
     <!--Humans.txt-->
     <link type="text/plain" rel="author" href="http://www.univunix.com/humans.txt">
+
+    <!--Meta-->
+    <%- @getBlock("meta").toHTML() %>
 
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
@@ -22,9 +42,7 @@
     <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#00778c">
 
-    <!--Meta-->
-    <%- @getBlock("meta").toHTML() %>
-
+    <!--Styles-->
     <%- @getBlock("styles").add([
           "/styles/pure-min.css",
           "/styles/grids-responsive-min.css",

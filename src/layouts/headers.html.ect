@@ -3,13 +3,23 @@ layout: default
 ---
 
 <header class="pure-g unvx-header">
-  <div class="pure-u-1">
-    <nav class="unvx-main-menu pure-menu pure-menu-horizontal">
+  <div class="pure-u-1 pure-u-md-1-3">
+    <nav class="unvx-main-menu pure-menu">
       <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">
         <img src="/icons/logo2016.svg"/>
         <span class="title-first">Univ</span>
         <span class="title-second">Unix</span>
       </a>
+      <a href="#" class="toggle">
+        <% for i in [1..3] : %>
+          <span class="bar"></span>
+        <% end %>
+      </a>
+    </nav>
+  </div>
+  <div class="pure-u-1">
+    <nav class="unvx-main-menu pure-menu pure-menu-horizontal">
+
       <ul class="pure-menu-list">
         <% for item in @getCollection('categories').toJSON() : %>
           <li class="pure-menu-item"><a href="<%= item.url %>" class="pure-menu-link"><%= item.title %></a></li>

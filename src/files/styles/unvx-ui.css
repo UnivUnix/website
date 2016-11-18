@@ -27,29 +27,55 @@ html
     width: 100%;
 }
 
-.unvx-header .title-first
-{
-  margin-right: -0.1em;
-  font-weight: 100;
-}
-
-.unvx-header .title-second
-{
-  margin-left: -0.1em;
-  font-weight: 700;
-}
 
 .unvx-main-menu
 {
     display: flex;
     padding: .5em;
-    border-bottom: .2em solid rgb(254, 254, 254);
+    border-bottom: .2em solid rgb(0, 150, 170);
     border-bottom: .2em solid rgba(255,255,255,0.7);
     background: rgb(0, 119, 140);
     background: rgba(0, 119, 140, 0.8);
     box-shadow: 0 1px 1px rgba(0,0,0, .10);
 
     justify-content: space-between;
+}
+
+.unvx-main-menu .toggle
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 2em;
+  height: 2em;
+}
+
+.unvx-main-menu .bar
+{
+  background: rgb(254, 254, 254);
+  background: rgba(255, 255, 255, 0.9);
+  display: block;
+  width: 1.8em;
+  height: 0.1em;
+  -webkit-border-radius: 30em;
+  -moz-border-radius: 30em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0.2em;
+  right: 0.1em;
+}
+
+.unvx-main-menu .title-first
+{
+  margin-right: -0.1em;
+  font-weight: 100;
+}
+
+.unvx-main-menu .title-second
+{
+  margin-left: -0.1em;
+  font-weight: 700;
 }
 
 .unvx-main-menu .pure-menu-heading img
