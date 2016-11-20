@@ -2,56 +2,50 @@
 layout: default
 ---
 
-<header class="pure-g unvx-header">
-  <div class="pure-u-1 pure-u-md-1-3">
-    <nav class="unvx-main-menu pure-menu">
+<header id="main-menu" class="pure-g unvx-header">
+  <div class="pure-u-1 pure-u-md-1-5">
+    <nav class="unvx-main-menu-heading pure-menu">
       <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">
         <img src="/icons/logo2016.svg"/>
         <span class="title-first">Univ</span>
         <span class="title-second">Unix</span>
       </a>
-      <a href="#" class="toggle">
-        <% for i in [1..3] : %>
+      <a href="#" id="toggle" class="toggle">
+        <% for i in [1..2] : %>
           <span class="bar"></span>
         <% end %>
       </a>
     </nav>
   </div>
-  <div class="pure-u-1">
-    <nav class="unvx-main-menu pure-menu pure-menu-horizontal">
-
+  <div class="pure-u-1 pure-u-md-4-5">
+    <nav class="unvx-main-menu pure-menu pure-menu-horizontal can-transform">
       <ul class="pure-menu-list">
         <% for item in @getCollection('categories').toJSON() : %>
           <li class="pure-menu-item"><a href="<%= item.url %>" class="pure-menu-link"><%= item.title %></a></li>
         <% end %>
-        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-          <a href="#" id="socialMenu" class="pure-menu-link">RRSS</a>
-          <ul class="pure-menu-children">
-              <li class="pure-menu-item">
-                <a href="https://twitter.com/univunix" class="pure-menu-link" target="_blank">
-                  <i class="fa fa-fw fa-twitter-square"></i>
-                  Twitter
-                </a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="https://plus.google.com/+Univunix?rel=publisher" class="pure-menu-link" target="_blank">
-                  <i class="fa fa-fw fa-google-plus-square"></i>
-                  Google +
-                </a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="https://github.com/UnivUnix" class="pure-menu-link" target="_blank">
-                  <i class="fa fa-fw fa-github-square"></i>
-                  Github
-                </a>
-              </li>
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link" target="_blank">
-                  <i class="fa fa-fw fa-rss-square"></i>
-                  RSS
-                </a>
-              </li>
-          </ul>
+        <li class="pure-menu-item unvx-menu-social-item">
+          <a href="https://twitter.com/univunix" class="pure-menu-link" target="_blank">
+            <i class="fa fa-fw fa-twitter-square"></i>
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li class="pure-menu-item unvx-menu-social-item">
+          <a href="https://plus.google.com/+Univunix?rel=publisher" class="pure-menu-link" target="_blank">
+            <i class="fa fa-fw fa-google-plus-square"></i>
+            <span>Google +</span>
+          </a>
+        </li>
+        <li class="pure-menu-item unvx-menu-social-item">
+          <a href="https://github.com/UnivUnix" class="pure-menu-link" target="_blank">
+            <i class="fa fa-fw fa-github-square"></i>
+            <span>Github</span>
+          </a>
+        </li>
+        <li class="pure-menu-item unvx-menu-social-item">
+          <a href="#" class="pure-menu-link" target="_blank">
+            <i class="fa fa-fw fa-rss-square"></i>
+            <span>RSS</span>
+          </a>
         </li>
       </ul>
     </nav>

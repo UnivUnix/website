@@ -54,6 +54,8 @@
   </head>
   <body>
     <%- @content %>
-    <%- @getBlock("scripts").toHTML() %>
+    <%- @getBlock("scripts").add([
+      "/scripts/menu-toggle.js"
+      ]).toHTML() %>
   </body>
 </html>
