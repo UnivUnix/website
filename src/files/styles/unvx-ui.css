@@ -1,3 +1,8 @@
+/*csslint
+  regex-selectors:false,
+  unqualified-attributes:false,
+  adjoining-classes:false
+*/
 html, button, input, select, textarea, .pure-g [class *='pure-u'] {
   /* Set your content font stack here: */
   font-family: 'Lato', sans-serif;
@@ -22,11 +27,11 @@ html {
   -ms-transition: height .5s;
   -o-transition: height .5s;
   transition: height .5s;
-  border-bottom: .2em solid rgb(0, 100, 100);
+  border-bottom: .2em solid rgb(50, 100, 100);
   border-bottom: .2em solid rgba(255, 255, 255, .7);
   background: rgb(0, 70, 70);
   background: rgba(0, 70, 70, .8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .10);
+  box-shadow: 0 .1em .1em rgba(0, 0, 0, .10);
 }
 
 .unvx-main-menu {
@@ -107,8 +112,8 @@ html {
 .unvx-main-menu .pure-menu-item a, .unvx-main-menu-heading .pure-menu-heading {
   font-weight: 400;
   color: rgb(254, 254, 254);
-  background: rgb(0, 119, 140);
-  background: rgba(0, 119, 140, 0);
+  background: rgb(0, 70, 70);
+  background: rgba(0, 70, 70, 0);
 }
 
 .unvx-main-menu .pure-menu-item a:hover, .unvx-main-menu-heading .pure-menu-heading:hover {
@@ -129,16 +134,17 @@ html {
 .unvx-article-item {
   margin: .2em;
   color: rgb(254, 254, 254);
-  background: rgb(0, 119, 140);
-  background: rgba(0, 119, 140, .8);
+  background: rgb(0, 70, 70);
+  background: rgba(0, 70, 70, .8);
+  box-shadow: 0 .1em .1em rgba(0, 0, 0, .10);
 }
 
 .unvx-article-item header {
   padding: .25em .5em;
-  border-bottom: .2em solid rgb(254, 254, 254);
+  border-bottom: .2em solid rgb(50, 100, 100);
   border-bottom: .2em solid rgba(255, 255, 255, .7);
-  background: rgb(0, 100, 120);
-  background: rgba(0, 0, 0, .3);
+  background: rgb(0, 60, 60);
+  background: rgba(0, 0, 0, .25);
 }
 
 .unvx-article-item .unvx-item-title {
@@ -161,26 +167,36 @@ html {
   position: fixed;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   width: 100%;
+  height: 2.587em;
+  border-top: .2em solid rgb(75, 75, 75);
+  border-top: .2em solid rgba(255, 255, 255, .7);
+  background: rgb(45, 45, 45);
+  background: rgba(45, 45, 45, .8);
+  box-shadow: .1em .1em 0 rgba(0, 0, 0, .10);
 }
 
 .unvx-footer-menu {
-  padding: .5em;
+  padding: .2em;
   text-align: center;
-  border-top: .1em solid rgb(254, 254, 254);
-  background: #2d2d2d;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, .10);
 }
 
 .unvx-footer-menu .pure-menu-item a {
   font-weight: 400;
   color: rgb(254, 254, 254);
-  background: #2d2d2d;
+  background: rgb(45, 45, 45);
+  background: rgba(45, 45, 45, 0);
 }
 
 .unvx-footer-menu .pure-menu-item a:hover {
-  color: #2d2d2d;
+  color: rgb(0, 0, 0);
+  -webkit-border-radius: .2em;
+  -moz-border-radius: .2em;
+  border-radius: .2em;
   background: rgb(254, 254, 254);
+  background: rgba(254, 254, 254, .7);
+  -khtml-border-radius: .2em;
 }
 
 @media (max-width: 47.999em) {
@@ -188,18 +204,19 @@ html {
     width: 86%;
     width: calc(100% - 4.587em);
   }
+
   .unvx-main-menu-heading .toggle {
     display: block;
   }
+
   .unvx-main-menu {
     text-align: left;
   }
-  /*csslint adjoining-classes:false*/
+
   .unvx-header.open {
     overflow-y: auto;
     height: 40%;
   }
-  /*csslint adjoining-classes:true*/
 }
 
 @media (min-width: 48em) {
