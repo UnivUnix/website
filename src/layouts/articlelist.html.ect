@@ -3,7 +3,7 @@ layout: body
 ---
 
 <% count = 0 %>
-<% collection = @getCollection('articles').toJSON() %>
+<% collection = @getCollection(@document.collection).toJSON() %>
 <% for item in collection : %>
   <% if count%4 is 0 : %>
     <div class="pure-g">
