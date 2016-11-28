@@ -68,7 +68,7 @@ docpadConfig = {
       @getCollection('documents')
       .findAllLive({relativeOutDirPath: 'categories'}, [{date: -1}])
       .on "add", (model) ->
-        #model.setMetaDefaults({layout:"category"})
+        model.setMetaDefaults({layout:"articlelist"})
 
   #Plugins configuration
 

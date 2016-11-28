@@ -48,14 +48,17 @@ html {
   top: 0;
   right: 0;
   display: none;
+  box-sizing: border-box;
+  padding: 1em 0.5em;
   width: 2.587em;
   height: 2.587em;
 }
 
 .unvx-main-menu-heading .toggle .bar {
+  position: absolute;
   display: block;
+  width: 1.5em;
   height: .1em;
-  margin: 1em .6em 0 .6em;
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   -ms-transition: all .5s;
@@ -69,7 +72,6 @@ html {
 }
 
 .unvx-main-menu-heading .toggle .bar:last-child {
-  margin: 0 .6em 1em .6em;
   -webkit-transform: translateY(.187em);
   -moz-transform: translateY(.187em);
   -ms-transform: translateY(.187em);
@@ -200,7 +202,8 @@ html {
 }
 
 @media (max-width: 47.999em) {
-  .unvx-main-menu-heading .pure-menu-heading {
+  .unvx-header .pure-menu-heading,
+  .unvx-main-menu .pure-menu-item {
     width: 86%;
     width: calc(100% - 4.587em);
   }
