@@ -56,7 +56,7 @@ docpadConfig = {
       @getCollection('documents')
       .findAllLive({relativeOutDirPath: /articles[\/\\]\w+/}, [{date: -1}])
       .on "add", (model) ->
-        #model.setMetaDefaults({layout:"post"})
+        model.setMetaDefaults({layout:"article"})
 
     pages: ->
       @getCollection('documents')
