@@ -14,12 +14,13 @@ layout: body
         <h2 class="unvx-item-title"><a href="<%= item.url %>"><%= item.title %></a></h2>
       </header>
       <div>
-        
+
       </div>
       <footer>
-        <ul>
-          <li><%= if item.authors.length > 1 then item.authors[0].concat(' y otros') else item.authors[0] %></li>
-        </ul>
+        <span>
+          <i class="fa fa-user"></i>
+          <%= if item.authors.length > 1 then item.authors[0].concat(' y otros') else item.authors[0] %>
+        </span>
       </footer>
     </article>
   </div>
