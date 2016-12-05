@@ -14,7 +14,9 @@ layout: body
         <h2 class="unvx-item-title"><a href="<%= item.url %>"><%= item.title %></a></h2>
       </header>
       <div>
-
+        <a href="<%= item.url %>">
+          <img src="<%= if item.featuredImg? then @getThumbnail(item.featuredImg) %>">
+        </a>
       </div>
       <footer>
         <span>

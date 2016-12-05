@@ -56,7 +56,10 @@ docpadConfig = {
       @getCollection('documents')
       .findAllLive({relativeOutDirPath: /articles[\/\\]\w+/}, [{date: -1}])
       .on "add", (model) ->
-        model.setMetaDefaults({layout:"article"})
+        model.setMetaDefaults({
+          layout: "article",
+          featuredImg: model.getAssociatedFilesPath() + "header.png"
+        });
 
     pages: ->
       @getCollection('documents')
@@ -71,6 +74,15 @@ docpadConfig = {
         model.setMetaDefaults({layout:"articlelist"})
 
   #Plugins configuration
+  plugins:
+    associatedfiles:
+      associatedFilesPath: 'associated-files'
+      useRelativeBase: false
+    imagin:
+        presets:
+            'default': 'sepia'
+            'sepia': (img, args) ->
+                return img.sepia()
 
   #Event configuration
 
