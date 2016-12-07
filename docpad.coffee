@@ -78,11 +78,20 @@ docpadConfig = {
     associatedfiles:
       associatedFilesPath: 'associated-files'
       useRelativeBase: false
+    moment:
+      formats: [
+        {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
+        {raw: 'date', format: 'DD/MM/YYYY', formatted: 'humanDate'}
+        {raw: 'date', format: 'ddd, DD MMM YYYY HH:mm:ss ZZ', formatted: 'rfcDate'}
+      ]
     imagin:
-        presets:
-            'default': 'sepia'
-            'sepia': (img, args) ->
-                return img.sepia()
+        targets:
+            'default': 'articleList'
+            'articleList': (img, args) ->
+                return img
+                  .resize(698, 396, "^")
+                  .gravity('Center')
+                  .crop(698, 396)
 
   #Event configuration
 

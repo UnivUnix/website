@@ -13,6 +13,7 @@ html {
   background-image: linear-gradient(30deg, rgb(190, 190, 190) 12%, transparent 12.5%, transparent 87%, rgb(190, 190, 190) 87.5%, rgb(190, 190, 190)), linear-gradient(150deg, rgb(190, 190, 190) 12%, transparent 12.5%, transparent 87%, rgb(190, 190, 190) 87.5%, rgb(190, 190, 190)), linear-gradient(30deg, rgb(190, 190, 190) 12%, transparent 12.5%, transparent 87%, rgb(190, 190, 190) 87.5%, rgb(190, 190, 190)), linear-gradient(150deg, rgb(190, 190, 190) 12%, transparent 12.5%, transparent 87%, rgb(190, 190, 190) 87.5%, rgb(190, 190, 190)), linear-gradient(60deg, rgb(254, 254, 254) 25%, transparent 25.5%, transparent 75%, rgb(254, 254, 254) 75%, rgb(254, 254, 254)), linear-gradient(60deg, rgb(254, 254, 254) 25%, transparent 25.5%, transparent 75%, rgb(254, 254, 254) 75%, rgb(254, 254, 254));
   background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
   background-size: 80px 140px;
+  background-attachment: fixed;
 }
 
 .unvx-header {
@@ -163,6 +164,14 @@ html {
 .unvx-article-item header a:hover {
   text-decoration: underline;
   color: inherit;
+}
+
+.unvx-article-item .unvx-featured-img a{
+  display: flex;
+}
+
+.unvx-article-item .unvx-featured-img img{
+  width: 100%;
 }
 
 .unvx-article-item footer {
