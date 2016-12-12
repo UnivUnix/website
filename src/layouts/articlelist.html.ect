@@ -15,7 +15,7 @@ layout: body
       </header>
       <div class="unvx-featured-img">
         <a href="<%= item.url %>">
-          <img src="<%= if item.featuredImg? then @getThumbnail(item.featuredImg) %>">
+          <img class="b-lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAroAAAGMAQMAAAAP+JN3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwMCAkAimcJagAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAA5SURBVBgZ7cExAQAAAMIg+6deDQ9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMcCiawAAdNN5hUAAAAASUVORK5CYII=" lazy-src="<%= if item.featuredImg? then @getThumbnail(item.associatedFilesPath + '/' + item.featuredImg) else @getThumbnail("/img/phnormal.png") %>">
         </a>
       </div>
       <footer>

@@ -1,6 +1,7 @@
 ---
 title: prueba.
 authors: [Aglezabad, Otro]
+featuredImg: header.png
 ---
 
 # Es una prueba.

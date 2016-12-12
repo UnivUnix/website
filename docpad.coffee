@@ -57,8 +57,7 @@ docpadConfig = {
       .findAllLive({relativeOutDirPath: /articles[\/\\]\w+/}, [{date: -1}])
       .on "add", (model) ->
         model.setMetaDefaults({
-          layout: "article",
-          featuredImg: model.getAssociatedFilesPath() + "header.png"
+          layout: "article"
         });
 
     pages: ->

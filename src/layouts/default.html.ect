@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title><%= @getDocumentTitle() %></title>
+
+<head>
+    <title>
+        <%= @getDocumentTitle() %>
+    </title>
 
     <!--Avoiding FOUC-->
     <style type="text/css">
-      .fouc-fix { display: none; }
+        .fouc-fix {
+            display: none;
+        }
     </style>
     <script type="text/javascript">
-      try {
-        var htmlElem = document.querySelector('html');
-        htmlElem.classList.add('fouc-fix');
-        document.addEventListener('DOMContentLoaded', function(event) {
-          htmlElem.classList.remove('fouc-fix');
-        });
-      } catch(err) {
-        console.log(err);
-      }
+        try {
+            var htmlElem = document.querySelector('html');
+            htmlElem.classList.add('fouc-fix');
+            document.addEventListener('DOMContentLoaded', function(event) {
+                htmlElem.classList.remove('fouc-fix');
+            });
+        } catch (err) {
+            console.log(err);
+        }
     </script>
 
     <!--Humans.txt-->
@@ -44,18 +49,21 @@
 
     <!--Styles-->
     <%- @getBlock("styles").add([
-          "/styles/pure-min.css",
-          "/styles/grids-responsive-min.css",
-          "/styles/font-awesome.min.css",
-          "/styles/unvx-ui.css",
-          "https://fonts.googleapis.com/css?family=Lato:300,400,700"
-        ]).toHTML()
-    %>
-  </head>
-  <body>
+      "/styles/pure-min.css",
+      "/styles/grids-responsive-min.css",
+      "/styles/font-awesome.min.css",
+      "/styles/unvx-ui.css",
+      "https://fonts.googleapis.com/css?family=Lato:300,400,700"
+    ]).toHTML() %>
+</head>
+
+<body>
     <%- @content %>
     <%- @getBlock("scripts").add([
-      "/scripts/menu-toggle.js"
-      ]).toHTML() %>
-  </body>
+      "/scripts/menu-toggle.js",
+      "/scripts/blazy.min.js",
+      "/scripts/startScripts.js"
+    ]).toHTML() %>
+</body>
+
 </html>
