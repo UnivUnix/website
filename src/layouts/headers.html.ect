@@ -21,7 +21,7 @@ layout: default
     <nav class="unvx-main-menu pure-menu pure-menu-horizontal can-transform">
       <ul class="pure-menu-list">
         <% for item in @getCollection('categories').toJSON() : %>
-          <li class="pure-menu-item"><a href="<%= item.url %>" class="pure-menu-link"><%= item.title %></a></li>
+          <li class="pure-menu-item"><a href="<%= @getFullURL(item.url) %>" class="pure-menu-link"><%= item.title %></a></li>
         <% end %>
         <li class="pure-menu-item unvx-menu-social-item">
           <a href="https://twitter.com/univunix" class="pure-menu-link" target="_blank">
