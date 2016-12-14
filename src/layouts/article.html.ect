@@ -2,4 +2,9 @@
 layout: body
 ---
 
-<%- @content %>
+<article class="unvx-article">
+  <header>
+    <h1 class="title"><%= @document.title %></h1>
+  </header>
+  <%- @content %>
+</article>
