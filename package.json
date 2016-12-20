@@ -5,11 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "docpad": "~6.79.0",
+    "docpad-plugin-analytics": "~2.1.1",
     "docpad-plugin-assets": "~2.1.2",
     "docpad-plugin-associatedfiles": "~2.2.0",
     "docpad-plugin-authentication": "~2.4.6",
     "docpad-plugin-cleanurls": "~2.8.1",
+    "docpad-plugin-cms": "~2.5.4",
     "docpad-plugin-copy": "~2.1.3",
+    "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-ect": "~2.0.1",
     "docpad-plugin-gist": "~2.1.1",
     "docpad-plugin-imagin": "~2.0.3",
@@ -17,6 +20,8 @@
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-paged": "~2.4.0",
+    "docpad-plugin-pluginmanager": "~2.0.0",
+    "docpad-plugin-posteditor": "~2.1.2",
     "docpad-plugin-related": "~2.2.2",
     "docpad-plugin-sitemap": "~2.2.0"
   },

@@ -4,6 +4,7 @@
 # Define the DocPad Configuration
 docpadConfig = {
   regenerateDelay: 0
+  regenerateEvery: 60000
   ignoreHiddenFiles: true
 
   port: 9778
@@ -27,6 +28,18 @@ docpadConfig = {
         "electrónica",
         "impresión",
         "3D"
+      ]
+      styles: [
+        "/styles/pure-min.css",
+        "/styles/grids-responsive-min.css",
+        "/styles/font-awesome.min.css",
+        "/styles/unvx-ui.css",
+        "https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      ]
+      scripts: [
+        "/scripts/menu-toggle.js",
+        "/scripts/blazy.min.js",
+        "/scripts/startScripts.js"
       ]
 
     # Helper functions
@@ -76,6 +89,14 @@ docpadConfig = {
 
   #Plugins configuration
   plugins:
+    authentication:
+      protectedUrls: ['/test/*']
+    posteditor:
+      handleRegeneration: false
+      generateHomePage: false
+      sendRenderedContent: false
+    cms:
+      watchTemplates: true
     associatedfiles:
       associatedFilesPath: 'associated-files'
       useRelativeBase: false

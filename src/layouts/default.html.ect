@@ -48,22 +48,12 @@
     <meta name="theme-color" content="#00778c">
 
     <!--Styles-->
-    <%- @getBlock("styles").add([
-      "/styles/pure-min.css",
-      "/styles/grids-responsive-min.css",
-      "/styles/font-awesome.min.css",
-      "/styles/unvx-ui.css",
-      "https://fonts.googleapis.com/css?family=Lato:300,400,700"
-    ]).toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
 </head>
 
 <body>
     <%- @content %>
-    <%- @getBlock("scripts").add([
-      "/scripts/menu-toggle.js",
-      "/scripts/blazy.min.js",
-      "/scripts/startScripts.js"
-    ]).toHTML() %>
+    <%- @getBlock("scripts").toHTML() %>
 </body>
 
 </html>
