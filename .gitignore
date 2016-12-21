@@ -41,3 +41,6 @@ jspm_packages
 
 #No out
 out
+
+#No configured start script
+start-univunix.sh

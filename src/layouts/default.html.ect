@@ -48,12 +48,12 @@
     <meta name="theme-color" content="#00778c">
 
     <!--Styles-->
-    <%- @getBlock("styles").toHTML() %>
+    <%- @getBlock("styles").add(@site.styles).toHTML() %>
 </head>
 
 <body>
     <%- @content %>
-    <%- @getBlock("scripts").toHTML() %>
+    <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
 </body>
 
 </html>
