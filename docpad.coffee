@@ -96,7 +96,7 @@ docpadConfig = {
   #Plugins configuration
   plugins:
     authentication:
-      protectedUrls: ['/cms/*']
+      protectedUrls: ['/test/*']
       forceServerCreation: true
       strategies:
         google:
