@@ -63,7 +63,7 @@ docpadConfig = {
       .on "add", (model) ->
         model.setMetaDefaults({
           layout: "article"
-        });
+        })
 
     pages: ->
       @getCollection('documents')
@@ -77,7 +77,7 @@ docpadConfig = {
       .on "add", (model) ->
         model.setMetaDefaults({
           layout:"articlelist"
-        });
+        })
 
   #Environment configuration
   localeCode: 'es'
@@ -93,17 +93,22 @@ docpadConfig = {
       maxAge: false
       hostname: 'univunix.com'
 
-  #Plugins configuration
+  # Plugins configuration
   plugins:
     authentication:
       protectedUrls: ['/test/*']
-      forceServerCreation: true
+      # This doesn't do anything. (issue #9)
+      # forceServerCreation: true
       strategies:
         google:
           settings:
             clientID: process.env.GOOGLE_CLIENT_ID
             clientSecret: process.env.GOOGLE_CLIENT_SECRET
-            authParameters: scope: ['https://www.googleapis.com/auth/userinfo.profile','https://www.googleapis.com/auth/userinfo.email']
+            authParameters:
+              scope: [
+                'https://www.googleapis.com/auth/userinfo.profile',
+                'https://www.googleapis.com/auth/userinfo.email'
+              ]
           url:
             auth: '/auth/google'
             callback: '/auth/google/callback'
@@ -118,29 +123,38 @@ docpadConfig = {
             callback: '/auth/github/callback'
             success: '/'
             fail: '/login'
-    posteditor:
-      handleRegeneration: false
-    cms:
-      watchTemplates: false
     moment:
       formats: [
-        {raw: 'date', format: 'YYYY-MM-DD', formatted: 'computerDate'}
-        {raw: 'date', format: 'DD/MM/YYYY', formatted: 'humanDate'}
-        {raw: 'date', format: 'ddd, DD MMM YYYY HH:mm:ss ZZ', formatted: 'rfcDate'}
+        {
+          raw: 'date',
+          format: 'YYYY-MM-DD',
+          formatted: 'computerDate'
+        },
+        {
+          raw: 'date',
+          format: 'DD/MM/YYYY',
+          formatted: 'humanDate'
+        }
+        {
+          raw: 'date',
+          format: 'ddd, DD MMM YYYY HH:mm:ss ZZ',
+          formatted: 'rfcDate'
+        }
       ]
     imagin:
-        targets:
-            'default': 'articleList'
-            'articleList': (img, args) ->
-                return img
-                  .resize(698, 396, "^")
-                  .gravity('Center')
-                  .crop(698, 396)
+      targets:
+        'default': 'articleList'
+        'articleList': (img, args) ->
+          return img
+            .resize(698, 396, "^")
+            .gravity('Center')
+            .crop(698, 396)
 
   #Event configuration
   events:
     # Server Extend
-    # Used to add our own custom routes to the server before the docpad routes are added
+    # Used to add our own custom routes to the server before the docpad routes
+    # are added
     serverExtend: (opts) ->
       # Extract the server from the options
       {server} = opts
@@ -153,7 +167,8 @@ docpadConfig = {
       oldUrls = latestConfig.templateData.site.oldUrls or []
       newUrl = latestConfig.templateData.site.url
 
-      # Redirect any requests accessing one of our sites oldUrls to the new site url
+      # Redirect any requests accessing one of our sites oldUrls
+      # to the new site url
       server.use (req,res,next) ->
         if req.headers.host in oldUrls
           res.redirect(newUrl+req.url, 301)
