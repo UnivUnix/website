@@ -3,8 +3,8 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-  regenerateDelay: 0
-  regenerateEvery: 1800000
+  regenerateDelay: 1000
+  regenerateEvery: 3600000
   ignoreHiddenFiles: true
 
   port: 9778
@@ -97,8 +97,7 @@ docpadConfig = {
   plugins:
     authentication:
       protectedUrls: ['/test/*']
-      # This doesn't do anything. (issue #9)
-      # forceServerCreation: true
+      forceServerCreation: true
       strategies:
         google:
           settings:
