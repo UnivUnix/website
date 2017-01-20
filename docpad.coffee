@@ -31,7 +31,7 @@ docpadConfig = {
       scripts: [
         "/scripts/menu-toggle.js",
         "/scripts/blazy.min.js",
-        "/scripts/startScripts.js"
+        "/scripts/start-scripts.js"
       ]
 
     # Helper functions
@@ -39,14 +39,13 @@ docpadConfig = {
       if @document.title
         "#{@document.title} | #{@site.title}"
       else
-        "#{@site.title}"
+        @site.title
 
     getDocumentDescription: ->
-      "#{@site.description}"
+      @document.description or @site.description
 
-    mergeKeywords: ->
-      @site.keywords.concat(@document.keywords or [])
-      .join(", ")
+    getKeywords: ->
+      @site.keywords.concat(@document.keywords or []).join(', ')
 
     formatURL: (url) ->
       url
@@ -127,17 +126,17 @@ docpadConfig = {
         {
           raw: 'date',
           format: 'YYYY-MM-DD',
-          formatted: 'computerDate'
+          formatted: 'pc'
         },
         {
           raw: 'date',
           format: 'DD/MM/YYYY',
-          formatted: 'humanDate'
+          formatted: 'human'
         }
         {
           raw: 'date',
           format: 'ddd, DD MMM YYYY HH:mm:ss ZZ',
-          formatted: 'rfcDate'
+          formatted: 'rfc'
         }
       ]
     imagin:
@@ -152,8 +151,7 @@ docpadConfig = {
   #Event configuration
   events:
     # Server Extend
-    # Used to add our own custom routes to the server before the docpad routes
-    # are added
+    # Used to add our own custom routes to the server before the docpad routes are added
     serverExtend: (opts) ->
       # Extract the server from the options
       {server} = opts
@@ -165,14 +163,34 @@ docpadConfig = {
       latestConfig = docpad.getConfig()
       oldUrls = latestConfig.templateData.site.oldUrls or []
       newUrl = latestConfig.templateData.site.url
+      auth = docpad.getPlugin('authentication')
+      console.log("Got plugin: "+auth.name)
 
-      # Redirect any requests accessing one of our sites oldUrls
-      # to the new site url
+      # Redirect any requests accessing one of our
+      # sites oldUrls to the new site url
       server.use (req,res,next) ->
         if req.headers.host in oldUrls
           res.redirect(newUrl+req.url, 301)
         else
           next()
+        #url to make a user admin
+        server.get /\/makeAdmin/, (req,res,next) ->
+          try
+            user = req.user
+            user = auth.makeAdmin(user.service_id,user.service)
+            req.login user, (err) ->
+              if err
+                next(err)
+                res.redirect('/admin')
+          catch err
+            docpad.log("warn",err)
+            throw err
+
+        server.get '/' , (req,res,next) ->
+          if req.user and req.user.isNew
+            res.redirect('/sign-up')
+          else
+            next()
 }
 
 # Export the DocPad Configuration

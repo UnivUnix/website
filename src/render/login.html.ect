@@ -1,0 +1,12 @@
+---
+layout: body
+dynamic: true
+title: Login
+---
+
+<% if !@req.user: %>
+
+<% else: %>
+  <% user = @req.user.username %>
+  <h2>Bienvenido <%= user %>. Puedes navegar por la web sin problema.</h2>
+<% end %>
