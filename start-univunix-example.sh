@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Put your OAuth2 codes here.
 export GITHUB_CLIENT_ID=
@@ -8,8 +8,14 @@ export GOOGLE_CLIENT_SECRET=
 export NODE_ENV=prod_dev
 
 case "$1" in
-'defaults')
-  docpad run
+'run')
+  docpad run ${*:2}
+  ;;
+'install')
+  docpad install ${*:2}
+  ;;
+'uninstall')
+  docpad uninstall ${*:2}
   ;;
 'update')
   docpad update
@@ -21,7 +27,7 @@ case "$1" in
   docpad clean
   ;;
 '')
-  echo "ERROR: No argument provided (defaults|update|upgrade|clean)."
+  echo "ERROR: No argument provided (run|install|uninstall|update|upgrade|clean)."
   exit 1
   ;;
 esac

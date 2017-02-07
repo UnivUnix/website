@@ -97,6 +97,12 @@ docpadConfig = {
     authentication:
       protectedUrls: ['/test/*']
       forceServerCreation: true
+
+      ensureAuthenticated: (req, res, next) ->
+        if req.isAuthenticated()
+          return next()
+        res.redirect('/login.html')
+
       strategies:
         google:
           settings:
@@ -163,8 +169,6 @@ docpadConfig = {
       latestConfig = docpad.getConfig()
       oldUrls = latestConfig.templateData.site.oldUrls or []
       newUrl = latestConfig.templateData.site.url
-      auth = docpad.getPlugin('authentication')
-      console.log("Got plugin: "+auth.name)
 
       # Redirect any requests accessing one of our
       # sites oldUrls to the new site url
@@ -173,24 +177,12 @@ docpadConfig = {
           res.redirect(newUrl+req.url, 301)
         else
           next()
-        #url to make a user admin
-        server.get /\/makeAdmin/, (req,res,next) ->
-          try
-            user = req.user
-            user = auth.makeAdmin(user.service_id,user.service)
-            req.login user, (err) ->
-              if err
-                next(err)
-                res.redirect('/admin')
-          catch err
-            docpad.log("warn",err)
-            throw err
 
-        server.get '/' , (req,res,next) ->
-          if req.user and req.user.isNew
-            res.redirect('/sign-up')
-          else
-            next()
+      server.get '/' , (req,res,next) ->
+        if req.user and req.user.isNew
+          res.redirect('/sign-up')
+        else
+          next()
 }
 
 # Export the DocPad Configuration
