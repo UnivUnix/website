@@ -9,13 +9,13 @@ export NODE_ENV=prod_dev
 
 case "$1" in
 'run')
-  docpad run ${*:2}
+  docpad run "${*:2}"
   ;;
 'install')
-  docpad install ${*:2}
+  docpad install "${*:2}"
   ;;
 'uninstall')
-  docpad uninstall ${*:2}
+  docpad uninstall "${*:2}"
   ;;
 'update')
   docpad update

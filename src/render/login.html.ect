@@ -5,7 +5,18 @@ title: Login
 ---
 
 <% if !@req.user: %>
-
+  <h2>Iniciar sesión</h2>
+  <p>Elija cómo entrar en UnivUnix:</p>
+  <div>
+    <a class="pure-button" href="/auth/github">
+      <i class="fa fa-github"></i>
+      <span>Github</span>
+    </a>
+    <a class="pure-button" href="/auth/google">
+      <i class="fa fa-google"></i>
+      <span>Google</span>
+    </a>
+  </div>
 <% else: %>
   <% user = @req.user.username %>
   <h2>Bienvenido <%= user %>. Puedes navegar por la web sin problema.</h2>
