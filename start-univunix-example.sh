@@ -7,24 +7,26 @@ export GOOGLE_CLIENT_ID=
 export GOOGLE_CLIENT_SECRET=
 export NODE_ENV=prod_dev
 
+DOCPAD=node_modules/docpad/bin/docpad
+
 case "$1" in
 'run')
-  docpad run "${*:2}"
+  "$DOCPAD" run "${*:2}"
   ;;
 'install')
-  docpad install "${*:2}"
+  "$DOCPAD" install "${*:2}"
   ;;
 'uninstall')
-  docpad uninstall "${*:2}"
+  "$DOCPAD" uninstall "${*:2}"
   ;;
 'update')
-  docpad update
+  "$DOCPAD" update
   ;;
 'upgrade')
-  docpad upgrade
+  "$DOCPAD" upgrade
   ;;
 'clean')
-  docpad clean
+  "$DOCPAD" clean
   ;;
 '')
   echo "ERROR: No argument provided (run|install|uninstall|update|upgrade|clean)."
