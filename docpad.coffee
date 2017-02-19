@@ -82,7 +82,7 @@ docpadConfig = {
   localeCode: 'es'
 
   environments:
-    prod_dev:
+    development:
       templateData:
         site:
           url: "http://localhost:9778"
@@ -153,6 +153,8 @@ docpadConfig = {
             .resize(698, 396, "^")
             .gravity('Center')
             .crop(698, 396)
+    less:
+      compress: true
 
   #Event configuration
   events:

@@ -8,4 +8,19 @@ html {
   background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
   background-size: 80px 140px;
   background-attachment: fixed;
+  .unvx-content {
+    font-family: 'Lato', sans-serif;
+    padding: 3.750em .5em;
+  }
+  .b-lazy {
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+    max-width: 100%;
+    opacity: 0;
+    &.b-loaded {
+      opacity: 1;
+    }
+  }
 }

@@ -1,0 +1,22 @@
+@media (max-width: 47.999em) {
+  .unvx-header .pure-menu-heading, .unvx-main-menu .pure-menu-item {
+    width: 86%;
+    width: calc(100% - 4.587em);
+  }
+  .unvx-main-menu-heading .toggle {
+    display: block;
+  }
+  .unvx-main-menu {
+    text-align: left;
+  }
+  .unvx-header.open {
+    overflow-y: auto;
+    height: 40%;
+  }
+}
+
+@media (min-width: 48em) {
+  .unvx-menu-social-item span {
+    display: none;
+  }
+}
