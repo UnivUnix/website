@@ -6,7 +6,9 @@ title: Iniciar sesión
 
 <% if !@req.user: %>
   <div class="unvx-login">
-    <h2>Iniciar sesión</h2>
+    <header>
+      <h1 class="title">Iniciar sesión</h1>
+    </header>
     <p>Elija cómo entrar en UnivUnix:</p>
     <div>
       <a class="pure-button btn-github" href=<%=@getFullURL("/auth/github")%>>
