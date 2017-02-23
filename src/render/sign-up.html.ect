@@ -6,12 +6,12 @@ title: Registro
 
 <%if !@req.user: %>
     <h2>Bienvenido. Inicie sesión primero.</h2>
-    <a class="pure-button" href="/login">Iniciar sesión</a>
+    <a class="pure-button" href=<%=@getFullURL("/login")%>>Iniciar sesión</a>
 <%else:%>
     <%user = @req.user%>
     <div id="register">
-        <form id="new-user" method="post" action="/createAccount">
-        <p>You are about to create a new account on <span class="make-it-bold"><%-@site.title%></span> using a login from</p>
+        <form id="new-user" method="post" action=<%=@getFullURL("/createAccount")%>>
+        <p>You are about to create a new account on <span><%-@site.title%></span> using a login from</p>
         <div class="openid-block">
             <span class="icon-google"></span>
             <span class="openid-name"><%-user.service%> (<%-user.email%>)</span>
