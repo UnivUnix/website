@@ -10,7 +10,7 @@ title: Iniciar sesión
       <h1 class="title">Iniciar sesión</h1>
     </header>
     <p>Elija cómo entrar en UnivUnix:</p>
-    <div>
+    <div class="unvx-btn-area">
       <a class="pure-button btn-github" href=<%=@getFullURL("/auth/github")%>>
         <i class="fa fa-github"></i>
         <span>Github</span>
@@ -23,7 +23,15 @@ title: Iniciar sesión
   </div>
 <% else: %>
   <div class="unvx-login">
-    <% user = @req.user.username %>
-    <h2>Bienvenido <%= user %>. Puedes navegar por la web sin problema.</h2>
+    <% user = @req.user.name %>
+    <header>
+      <h1 class="title">Iniciar sesión</h1>
+    </header>
+    <p>Bienvenido <%= user %>. Puedes navegar por la web sin problema.</p>
+    <div class="unvx-btn-area">
+      <a class="pure-button" href=<%=@getFullURL("/")%>>
+        <span>Página principal</span>
+      </a>
+    </div>
   </div>
 <% end %>
