@@ -3,10 +3,12 @@ window.onload = function () {
     offset: 250,
     src: 'lazy-src',
     success: function (element) {
-      console.log("Success");
+      console.log('Success')
     },
     error: function (element, msg) {
-      console.log("Error: " + msg);
+      console.log('Error: ' + msg)
     }
-  });
-};
+  })
+
+  getLoggedUser()
+}

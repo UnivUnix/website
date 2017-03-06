@@ -31,6 +31,7 @@ docpadConfig = {
       scripts: [
         "/scripts/menu-toggle.js",
         "/scripts/blazy.min.js",
+        "/scripts/ajax-req.js",
         "/scripts/start-scripts.js"
       ]
 
@@ -94,8 +95,13 @@ docpadConfig = {
 
   # Plugins configuration
   plugins:
+    api:
+      baseApiUrl: '/unvx-api'
+      source: [
+        file: 'api/users.js'
+        ]
     authentication:
-      protectedUrls: ['/test/*']
+      protectedUrls: ['/protected/*']
       forceServerCreation: true
 
       ensureAuthenticated: (req, res, next) ->
