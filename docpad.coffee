@@ -31,7 +31,7 @@ docpadConfig = {
       scripts: [
         "/scripts/menu-toggle.js",
         "/scripts/blazy.min.js",
-        "/scripts/ajax-req.js",
+        "/scripts/ajax-main.js",
         "/scripts/start-scripts.js"
       ]
 

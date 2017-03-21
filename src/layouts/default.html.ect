@@ -54,6 +54,7 @@
 <body>
     <%- @content %>
     <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
+    <%- @getBlock("scripts").add(@document.scripts).toHTML() %>
 </body>
 
 </html>
