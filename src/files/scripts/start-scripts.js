@@ -2,7 +2,7 @@ function startJS () {
   // Common call for all pages.
   startJSCommon()
   // Optional calls for specific pages.
-  if (typeof startJSLogin == 'function') {
+  if (typeof startJSLogin === 'function') {
     startJSLogin()
   }
 }
