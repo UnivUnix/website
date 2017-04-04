@@ -159,8 +159,6 @@ docpadConfig = {
             .resize(698, 396, "^")
             .gravity('Center')
             .crop(698, 396)
-    less:
-      compress: true
 
   #Event configuration
   events:
