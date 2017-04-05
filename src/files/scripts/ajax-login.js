@@ -14,7 +14,12 @@ function isLogged (callback) {
 
 function startJSLogin () {
   isLogged(function (result) {
-    var destHTMLObj = document.querySelector('#unvx-msg-pop')
-    destHTMLObj.innerHTML = 'Ya has iniciado sesión. Si deseas entrar con otro usuario, desconéctate antes.'
+    if (result) {
+      var destHTMLObj = document.querySelector('.unvx-login .content')
+      while (destHTMLObj.firstChild) {
+        destHTMLObj.removeChild(destHTMLObj.firstChild)
+      }
+      destHTMLObj.innerHTML = '<p>Ya has iniciado sesión. Si deseas entrar con otro usuario, desconéctate antes.</p>'
+    }
   })
 }

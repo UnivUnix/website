@@ -20,7 +20,10 @@
     "docpad-plugin-related": "~2.2.2",
     "docpad-plugin-sitemap": "~2.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.19.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "docpad run"
