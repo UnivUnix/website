@@ -159,6 +159,13 @@ docpadConfig = {
             .resize(698, 396, "^")
             .gravity('Center')
             .crop(698, 396)
+    less:
+      referencesOthers: true
+      # http://lesscss.org/#using-less-configuration
+      lessOptions:
+        compress: true,
+        sourceMap:
+          sourceMapFileInline: true
 
   #Event configuration
   events:
