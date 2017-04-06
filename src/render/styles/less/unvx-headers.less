@@ -9,12 +9,62 @@
   -moz-transition: height .5s;
   -ms-transition: height .5s;
   -o-transition: height .5s;
-  transition: height .5s;
+  transition-property: background-color, height;
+  transition-duration: .5s, 1s;
   border-bottom: .2em solid desaturate(@unvx-main, 70%);
   border-bottom: .2em solid fadeout(@natural-white, 30%);
   background: darken(@unvx-main, 10%);
   background: fadeout(darken(@unvx-main, 10%), 20%);
   box-shadow: 0 .1em .1em fadeout(black, 90%);
+  .toggle {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    box-sizing: border-box;
+    padding: 1em 0.5em;
+    width: 2.587em;
+    height: 2.587em;
+    .bar {
+      position: absolute;
+      display: block;
+      width: 1.5em;
+      height: .1em;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -ms-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      -webkit-border-radius: 30em;
+      -moz-border-radius: 30em;
+      border-radius: 30em;
+      background: @natural-white;
+      background: fadeout(@natural-white, 10%);
+      &:last-child {
+        -webkit-transform: translateY(.187em);
+        -moz-transform: translateY(.187em);
+        -ms-transform: translateY(.187em);
+        -o-transform: translateY(.187em);
+        transform: translateY(.187em);
+      }
+    }
+  }
+  .toggled {
+    .bar {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      &:last-child {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+  }
   .unvx-main-menu {
     padding: .2em;
     text-align: right;
@@ -49,55 +99,6 @@
         background: @natural-white;
         background: fadeout(@natural-white, 30%);
         -khtml-border-radius: .2em;
-      }
-    }
-    .toggle {
-      position: fixed;
-      top: 0;
-      right: 0;
-      display: none;
-      box-sizing: border-box;
-      padding: 1em 0.5em;
-      width: 2.587em;
-      height: 2.587em;
-      .bar {
-        position: absolute;
-        display: block;
-        width: 1.5em;
-        height: .1em;
-        -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        -ms-transition: all .5s;
-        -o-transition: all .5s;
-        transition: all .5s;
-        -webkit-border-radius: 30em;
-        -moz-border-radius: 30em;
-        border-radius: 30em;
-        background: @natural-white;
-        background: fadeout(@natural-white, 10%);
-        &:last-child {
-          -webkit-transform: translateY(.187em);
-          -moz-transform: translateY(.187em);
-          -ms-transform: translateY(.187em);
-          -o-transform: translateY(.187em);
-          transform: translateY(.187em);
-        }
-      }
-    }
-    .toggled {
-      .bar {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        &:last-child {
-          -webkit-transform: rotate(-45deg);
-          -moz-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          -o-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-        }
       }
     }
     .title-first {

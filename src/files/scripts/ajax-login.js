@@ -47,15 +47,23 @@ function startJSLogin () {
 
       // Button area part.
       var githubBtn = document.createElement('a');
+      var iGithubBtn = document.createElement('i');
       var spanGithubBtn = document.createElement('span');
+      iGithubBtn.classList.add('fa', 'fa-fw', 'fa-github');
+      iGithubBtn.setAttribute('aria-hidden', 'true');
       spanGithubBtn.innerHTML = 'Github';
+      githubBtn.appendChild(iGithubBtn);
       githubBtn.appendChild(spanGithubBtn);
       githubBtn.setAttribute('href', location.origin + '/auth/github');
       githubBtn.classList.add('pure-button', 'btn-github');
 
       var googleBtn = document.createElement('a');
+      var iGoogleBtn = document.createElement('i');
       var spanGoogleBtn = document.createElement('span');
+      iGoogleBtn.classList.add('fa', 'fa-fw', 'fa-google');
+      iGoogleBtn.setAttribute('aria-hidden', 'true');      
       spanGoogleBtn.innerHTML = 'Google';
+      googleBtn.appendChild(iGoogleBtn);
       googleBtn.appendChild(spanGoogleBtn);
       googleBtn.setAttribute('href', location.origin + '/auth/google');
       googleBtn.classList.add('pure-button', 'btn-google');

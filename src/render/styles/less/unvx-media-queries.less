@@ -1,17 +1,16 @@
 @media (max-width: 47.999em) {
   .unvx-header {
+    .toggle {
+      display: block;
+    }
     .pure-menu-heading {
       width: 86%;
       width: ~"calc(100% - 4.587em)";
     }
     &.open {
       overflow-y: auto;
-      height: 40%;
-    }
-    .unvx-main-menu-heading {
-      .toggle {
-        display: block;
-      }
+      height: 100vh;
+      background: darken(@unvx-main, 10%);
     }
     .unvx-main-menu {
       text-align: left;

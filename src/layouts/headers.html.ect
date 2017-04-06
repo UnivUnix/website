@@ -3,17 +3,17 @@ layout: default
 ---
 
 <header id="main-menu" class="pure-g unvx-header">
+  <a href="#" id="toggle" class="toggle">
+    <% for i in [1..2] : %>
+      <span class="bar"></span>
+    <% end %>
+  </a>
   <div class="pure-u-1 pure-u-md-1-5">
     <nav class="unvx-main-menu-heading pure-menu">
       <a href="<%= @getFullURL('/') %>" class="pure-menu-heading pure-menu-link">
         <img src="/icons/logo2016.svg"/>
         <span class="title-first">Univ</span>
         <span class="title-second">Unix</span>
-      </a>
-      <a href="#" id="toggle" class="toggle">
-        <% for i in [1..2] : %>
-          <span class="bar"></span>
-        <% end %>
       </a>
     </nav>
   </div>
@@ -57,7 +57,7 @@ layout: default
         <!-- LOGGED USER -->
         <li id="unvx-user" class="pure-menu-item">
           <a href="/login" class="pure-menu-link">
-            <i class="fa fa-fw fa-user"></i>
+            <i class="fa fa-fw fa-user-circle-o"></i>
             <span>Iniciar sesión</span>
           </a>
         </li>

@@ -4,7 +4,6 @@
 # Define the DocPad Configuration
 docpadConfig = {
   regenerateDelay: 1000
-  regenerateEvery: 3600000
   ignoreHiddenFiles: true
 
   port: 9778
@@ -24,7 +23,7 @@ docpadConfig = {
       styles: [
         "/styles/pure-min.css",
         "/styles/grids-responsive-min.css",
-        "/styles/font-awesome.min.css",
+        "/styles/font-awesome-min.css",
         "/styles/unvx-ui.css",
         "https://fonts.googleapis.com/css?family=Lato:300,400,700"
       ]
