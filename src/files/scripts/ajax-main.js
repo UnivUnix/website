@@ -1,3 +1,17 @@
+function isLogged (callback) {
+  var req = new XMLHttpRequest();
+  req.addEventListener('load', function () {
+    var userResponse = JSON.parse(this.responseText);
+    if (userResponse.name) {
+      callback(true);
+    } else {
+      callback(false);
+    }
+  });
+  req.open('GET', location.origin + '/unvx-api/users/logged');
+  req.send();
+}
+
 function getLoggedName (cssSelector) {
   var req = new XMLHttpRequest();
   req.addEventListener('load', function () {

@@ -9,14 +9,18 @@
     }
     &.open {
       overflow-y: auto;
-      height: 100vh;
+      height: ~"calc(100vh - 2.787em)";
       background: darken(@unvx-main, 10%);
+      .unvx-main-menu {
+        display: block;
+      }
     }
     .unvx-main-menu {
+      display: none;
       text-align: left;
       .pure-menu-item {
         width: 86%;
-        width: ~"calc(100% - 4.587em)";
+        width: ~"calc(100% - 2.587em)";
       }
     }
   }

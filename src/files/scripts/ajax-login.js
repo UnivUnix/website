@@ -1,17 +1,3 @@
-function isLogged (callback) {
-  var req = new XMLHttpRequest();
-  req.addEventListener('load', function () {
-    var userResponse = JSON.parse(this.responseText);
-    if (userResponse.name) {
-      callback(true);
-    } else {
-      callback(false);
-    }
-  });
-  req.open('GET', location.origin + '/unvx-api/users/logged');
-  req.send();
-}
-
 function startJSLogin () {
   isLogged(function (result) {
     // Get page content
@@ -61,7 +47,7 @@ function startJSLogin () {
       var iGoogleBtn = document.createElement('i');
       var spanGoogleBtn = document.createElement('span');
       iGoogleBtn.classList.add('fa', 'fa-fw', 'fa-google');
-      iGoogleBtn.setAttribute('aria-hidden', 'true');      
+      iGoogleBtn.setAttribute('aria-hidden', 'true');
       spanGoogleBtn.innerHTML = 'Google';
       googleBtn.appendChild(iGoogleBtn);
       googleBtn.appendChild(spanGoogleBtn);
