@@ -95,10 +95,9 @@ docpadConfig = {
   # Plugins configuration
   plugins:
     api:
-      baseApiUrl: '/unvx-api'
-      source: [
-        file: 'api/users.js'
-        ]
+      cfgSrc: [
+        'api/dpaconfig.json'
+      ]
     authentication:
       protectedUrls: ['/protected/*']
       forceServerCreation: true
