@@ -1,5 +1,6 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
+environment = require('./environment.json')
 
 # Define the DocPad Configuration
 docpadConfig = {
@@ -111,8 +112,8 @@ docpadConfig = {
       strategies:
         google:
           settings:
-            clientID: process.env.GOOGLE_CLIENT_ID
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+            clientID: environment.google.id
+            clientSecret: environment.google.secret
             authParameters:
               scope: [
                 'https://www.googleapis.com/auth/userinfo.profile',
@@ -125,8 +126,8 @@ docpadConfig = {
             fail: '/login'
         github:
           settings:
-            clientID: process.env.GITHUB_CLIENT_ID
-            clientSecret: process.env.GITHUB_CLIENT_SECRET
+            clientID: environment.github.id
+            clientSecret: environment.github.secret
           url:
             auth: '/auth/github'
             callback: '/auth/github/callback'

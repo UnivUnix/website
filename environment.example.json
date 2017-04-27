@@ -1,0 +1,10 @@
+{
+  "github": {
+    "id": "yourid",
+    "secret": "yoursecret"
+  },
+  "google": {
+    "id": "yourid",
+    "secret": "yoursecret"
+  }
+}

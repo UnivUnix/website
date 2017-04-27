@@ -43,4 +43,4 @@ jspm_packages
 out
 
 #No configured start script
-start-univunix.sh
+environment.json
