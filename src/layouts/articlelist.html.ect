@@ -2,8 +2,9 @@
 layout: body
 ---
 
+<% collection = @getCollection(@document.collection).toJSON() %>
 <div class="pure-g">
-<% for item in @getCollection('articles').toJSON() : %>
+<% for item in collection : %>
   <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
     <article id="<%= item.id %>" class="unvx-article-item">
       <header>
@@ -15,6 +16,10 @@ layout: body
         </a>
       </div>
       <footer>
+        <span>
+          <i class="fa fa-calendar"></i>
+          <%= item.human %>
+        </span>
         <span>
           <i class="fa fa-user"></i>
           <%= if item.authors.length > 1 then item.authors[0].concat(' y otros') else item.authors[0] %>
