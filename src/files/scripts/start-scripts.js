@@ -5,6 +5,9 @@ function startJS () {
   if (typeof startJSLogin === 'function') {
     startJSLogin();
   }
+  if (typeof startJSSignup === 'function') {
+    startJSSignup();
+  }
 }
 
 window.onload = function () {

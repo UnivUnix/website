@@ -58,26 +58,16 @@ docpadConfig = {
 
   collections:
     articles: ->
-      @getCollection('documents')
-      .findAllLive({relativeOutDirPath: /articles[\/\\]\w+/}, [{date: -1}])
-      .on "add", (model) ->
-        model.setMetaDefaults({
-          layout: "article"
-        })
+      @getCollection("documents").findAllLive({relativeOutDirPath: "articles"}, [{date: -1}]).on "add", (model) ->
+        model.setMetaDefaults({layout: "article"})
 
     pages: ->
-      @getCollection('documents')
-      .findAllLive({relativeOutDirPath: 'pages'}, [{date: -1}])
-      .on "add", (model) ->
-        #model.setMetaDefaults({layout:"page"})
+      @getCollection("documents").findAllLive({relativeOutDirPath: "pages"}, [{date: -1}]).on "add", (model) ->
+        model.setMetaDefaults({layout:"page"})
 
     categories: ->
-      @getCollection('documents')
-      .findAllLive({relativeOutDirPath: 'categories'}, [{date: -1}])
-      .on "add", (model) ->
-        model.setMetaDefaults({
-          layout:"articlelist"
-        })
+      @getCollection("documents").findAllLive({relativeOutDirPath: "categories"}, [{date: -1}]).on "add", (model) ->
+        model.setMetaDefaults({layout:"body"})
 
   #Environment configuration
   localeCode: 'es'
@@ -151,6 +141,7 @@ docpadConfig = {
         }
       ]
     imagin:
+      imageMagick: true
       targets:
         'default': 'articleList'
         'articleList': (img, args) ->
