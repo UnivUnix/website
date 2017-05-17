@@ -67,7 +67,7 @@ docpadConfig = {
 
     categories: ->
       @getCollection("documents").findAllLive({relativeOutDirPath: "categories"}, [{date: -1}]).on "add", (model) ->
-        model.setMetaDefaults({layout:"body"})
+        model.setMetaDefaults({layout:"articlelist"})
 
   #Environment configuration
   localeCode: 'es'
@@ -143,12 +143,16 @@ docpadConfig = {
     imagin:
       imageMagick: true
       targets:
-        'default': 'articleList'
         'articleList': (img, args) ->
           return img
             .resize(698, 396, "^")
             .gravity('Center')
             .crop(698, 396)
+        'articleHeader': (img, args) ->
+          return img
+            .resize(1920, 206, "^")
+            .gravity('Center')
+            .crop(1920, 206)
     less:
       referencesOthers: true
       # http://lesscss.org/#using-less-configuration

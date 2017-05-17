@@ -22,8 +22,7 @@ layout: default
       <ul class="pure-menu-list">
         <% for item in @getCollection('categories').toJSON() : %>
           <li class="pure-menu-item unvx-category-item">
-            <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link">
-
+            <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link <%= "selected" if @document.url is item.url %>">
               <span><%= item.title %></span>
             </a>
           </li>
