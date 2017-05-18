@@ -150,9 +150,9 @@ docpadConfig = {
             .crop(698, 396)
         'articleHeader': (img, args) ->
           return img
-            .resize(1920, 206, "^")
             .gravity('Center')
-            .crop(1920, 206)
+            .crop(480, 52)
+            .blur(10, 5)
     less:
       referencesOthers: true
       # http://lesscss.org/#using-less-configuration

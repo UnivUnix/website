@@ -7,7 +7,7 @@ function startJSLogin () {
     if (result) {
       // Message part.
       msgObj = destHTMLObj.querySelector('p');
-      msgObj.innerHTML = 'Ya has iniciado sesión. No hace falta que estés aquí.';
+      msgObj.innerHTML = 'Sesión ya iniciada. ¿Quiere cerrarla?';
 
       // Button area part.
       var backBtn = document.createElement('a');

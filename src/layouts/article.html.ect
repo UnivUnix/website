@@ -2,8 +2,14 @@
 layout: body
 ---
 
+<style type="text/css">
+  header.bg-img {
+    background: url('<%= if @document.headerImg? then @getThumbnail("/associated-files/" + @document.basename + "/" + @document.headerImg, "articleHeader") else @getThumbnail("/img/phnormal.png", "articleHeader") %>') no-repeat;
+    background-size: cover;
+  }
+</style>
 <article id="<%= @document.id %>" class="unvx-article">
-  <header>
+  <header class="bg-img">
     <h1 class="title"><%= @document.title %></h1>
   </header>
   <%- @content %>
