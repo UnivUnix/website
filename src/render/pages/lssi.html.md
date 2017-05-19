@@ -19,7 +19,7 @@ UnivUnix es propiedad de:
 1. El usuario o visitante de la página web http://univunix.com tiene la obligación de leer las condiciones de prestación
  del servicio que se detallan en este texto, de manera que asume estas como válidas durante dicha prestación.
 
-<del>2. La página web es explotada económicamente a través de la publicidad incrustada en sus páginas.</del>
+2. <del>La página web es explotada económicamente a través de la publicidad incrustada en sus páginas.</del>
 
 3. Condiciones de uso del contenido y servicios prestados en esta página web:
 
@@ -29,11 +29,11 @@ UnivUnix es propiedad de:
    Todos los contenidos propios (hechos por la administración del sitio) están cubiertos por la licencia
    Creative Commons BY-NC-SA,
 
-   <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
-   <img class="img-responsive lazy" alt="Creative Commons License" src="/img/placeholder.gif" data-original="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" style="margin: 0 auto; display: block">
+   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img class="b-lazy" alt="Creative Commons License" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA" lazy-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" style="margin: 0 auto; display: block">
    </a>
    UnivUnix by [Ángel González y Fernando Moro](http://www.univunix.com) is licensed under a
-   [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US).
+   [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
   3.2. En esta página web pueden existir contenidos de terceros. En cualquiera de los casos,
    y como es intención siempre el respetar los derechos de autor y las leyes del copyright,
@@ -50,7 +50,7 @@ UnivUnix es propiedad de:
   3.3. El autor de esta web no se hace responsable del mal uso que se haga del contenido
    expuesto en esta página web (http://univunix.com).
 
-  <del>3.4. La página web http://univunix.com es financiada y explotada económicamente a través
+  3.4. <del>La página web http://univunix.com es financiada y explotada económicamente a través
    de la publicidad expuesta en la misma, no existiendo ningún otro tipo de explotación económica.</del>
 
   3.5. En esta página web (http://univunix.com) no se recoge ningún tipo de información privada
@@ -77,15 +77,15 @@ UnivUnix es propiedad de:
   * Disqus (Sistema de comentarios/Técnica)
   * Cloudflare (Técnica)
 
-  El objetivo de estas cookies es meramente funcional, para calcular estadíticas de visitas y
+  4.2 El objetivo de estas cookies es meramente funcional, para calcular estadíticas de visitas y
    para conservar la sesión de los usuarios a lo largo de esta web.
 
-  Los datos solicitados y/o proporcionados por los usuarios registrados en el servicio se encuentran almacenados
+  4.3 Los datos solicitados y/o proporcionados por los usuarios registrados en el servicio se encuentran almacenados
    en una base de datos con el fin de identificar los contenidos que aporte dicho usuario, así,
    si quiere, proporcionar medios de comunicación a quien los solicite.
    Estos usuarios tendrán derecho al acceso, rectificación, cancelación y oposición de sus datos,
    simplemente contactando con la administración a través de los medios indicados en la sección 3.2.
 
-  Estos datos no se comparten, difunden o venden a entidades ajenas,
+  4.4 Estos datos no se comparten, difunden o venden a entidades ajenas,
    pero la administración no se hace responsable de una difusión provocada por el robo de información
    mediante ataques informáticos.
