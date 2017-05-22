@@ -11,8 +11,24 @@ layout: body
 <article id="<%= @document.id %>" class="unvx-article">
   <header class="bg-img">
     <h1 class="title"><%= @document.title %></h1>
+    <span>
+      <i class="fa fa-calendar"></i>
+      <time datetime="<%= @document.pc %>"><%= @document.human %></time>
+    </span>
+    <span>
+      <i class="fa fa-user"></i>
+      Escrito por:
+      <% i = 0 %>
+      <% while i < @document.authors.length : %>
+        <%= @document.authors[i] %>
+        <%= if i < @document.authors.length-2 then ", " else if i == @document.authors.length-2 then " y " %>
+        <% i++ %>
+      <% end %>
+    </span>
   </header>
-  <%- @content %>
+  <div class="content">
+    <%- @content %>
+  </div>
   <footer>
   </footer>
 </article>

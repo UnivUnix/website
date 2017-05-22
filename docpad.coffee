@@ -134,11 +134,6 @@ docpadConfig = {
           format: 'DD/MM/YYYY',
           formatted: 'human'
         }
-        {
-          raw: 'date',
-          format: 'ddd, DD MMM YYYY HH:mm:ss ZZ',
-          formatted: 'rfc'
-        }
       ]
     imagin:
       imageMagick: true
