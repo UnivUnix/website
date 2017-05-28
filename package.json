@@ -18,6 +18,7 @@
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-paged": "~2.5.0",
     "docpad-plugin-related": "~2.3.0",
+    "docpad-plugin-rss": "~2.3.1",
     "docpad-plugin-sitemap": "~2.4.0"
   },
   "devDependencies": {

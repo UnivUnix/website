@@ -29,6 +29,14 @@ layout: body
   <div class="content">
     <%- @content %>
   </div>
+  <div class="related">
+    <h2>También podría interesarte:</h2>
+    <ul>
+      <% for document in @getRelatedDocuments() : %>
+        <li><a href="<%= @getFullURL(document.url) %>"><%= document.title %></a></li>
+      <% end %>
+    </ul>
+  </div>
   <footer>
   </footer>
 </article>

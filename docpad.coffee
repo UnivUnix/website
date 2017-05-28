@@ -135,6 +135,11 @@ docpadConfig = {
           formatted: 'human'
         }
       ]
+    related:
+      parentCollectionName: 'articles'
+    rss:
+      default:
+        collection: 'articles'
     imagin:
       imageMagick: true
       targets:
