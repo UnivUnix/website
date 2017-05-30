@@ -89,6 +89,9 @@ docpadConfig = {
       cfgSrc: [
         'api/dpaconfig.json'
       ]
+    assets:
+      retainPath: 'yes'
+      retainName: 'no'
     authentication:
       protectedUrls: ['/protected/*']
       forceServerCreation: true
@@ -122,6 +125,31 @@ docpadConfig = {
             callback: '/auth/github/callback'
             success: '/'
             fail: '/login'
+    imagin:
+      imageMagick: true
+      targets:
+        'articleList': (img, args) ->
+          return img
+          .resize(698, 396, "^")
+          .gravity('Center')
+          .crop(698, 396)
+        'articleHeader': (img, args) ->
+          return img
+          .gravity('Center')
+          .crop(480, 52)
+          .blur(10, 5)
+    less:
+      referencesOthers: true
+      # http://lesscss.org/#using-less-configuration
+      lessOptions:
+        compress: true,
+        sourceMap:
+          sourceMapFileInline: true
+    marked:
+      gfm: true
+      tables: true
+      breaks: true
+      highlight: null
     moment:
       formats: [
         {
@@ -140,26 +168,6 @@ docpadConfig = {
     rss:
       default:
         collection: 'articles'
-    imagin:
-      imageMagick: true
-      targets:
-        'articleList': (img, args) ->
-          return img
-            .resize(698, 396, "^")
-            .gravity('Center')
-            .crop(698, 396)
-        'articleHeader': (img, args) ->
-          return img
-            .gravity('Center')
-            .crop(480, 52)
-            .blur(10, 5)
-    less:
-      referencesOthers: true
-      # http://lesscss.org/#using-less-configuration
-      lessOptions:
-        compress: true,
-        sourceMap:
-          sourceMapFileInline: true
 
   #Event configuration
   events:

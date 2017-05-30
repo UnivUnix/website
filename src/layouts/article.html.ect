@@ -26,17 +26,17 @@ layout: body
       <% end %>
     </span>
   </header>
-  <div class="content">
+  <section class="content">
     <%- @content %>
-  </div>
-  <div class="related">
+  </section>
+  <section class="related">
     <h2>También podría interesarte:</h2>
     <ul>
       <% for document in @getRelatedDocuments() : %>
         <li><a href="<%= @getFullURL(document.url) %>"><%= document.title %></a></li>
       <% end %>
     </ul>
-  </div>
+  </section>
   <footer>
   </footer>
 </article>
