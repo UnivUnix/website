@@ -37,6 +37,22 @@ layout: default
             </li>
           </ul>
         </li>
+        <!-- LOGGED USER -->
+        <li id="unvx-user" class="pure-menu-item">
+          <a href="/login" class="pure-menu-link">
+            <i class="fa fa-fw fa-user-circle-o"></i>
+            <span>Iniciar sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<%- @content %>
+<footer class="pure-g unvx-footer">
+  <div class="pure-u-1">
+    <nav class="unvx-footer-menu pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
         <!-- SOCIAL LINKS -->
         <li class="pure-menu-item unvx-menu-social-item">
           <a href="https://twitter.com/univunix" class="pure-menu-link" target="_blank">
@@ -63,27 +79,6 @@ layout: default
           </a>
         </li>
         <!-- END SOCIAL LINKS -->
-        <!-- LOGGED USER -->
-        <li id="unvx-user" class="pure-menu-item">
-          <a href="/login" class="pure-menu-link">
-            <i class="fa fa-fw fa-user-circle-o"></i>
-            <span>Iniciar sesión</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<%- @content %>
-<footer class="pure-g unvx-footer">
-  <div class="pure-u-1">
-    <nav class="unvx-footer-menu pure-menu pure-menu-horizontal">
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-          <a href="/pages/lssi" class="pure-menu-link">
-            LSSI
-          </a>
-        </li>
       </ul>
     </nav>
   </div>
