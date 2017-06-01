@@ -24,6 +24,11 @@
     padding: 1em 0.5em;
     width: 2.587em;
     height: 2.587em;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
     .bar {
       position: absolute;
       display: block;
@@ -40,27 +45,28 @@
       background: @natural-white;
       background: fadeout(@natural-white, 10%);
       &:last-child {
-        -webkit-transform: translateY(.187em);
-        -moz-transform: translateY(.187em);
-        -ms-transform: translateY(.187em);
-        -o-transform: translateY(.187em);
-        transform: translateY(.187em);
+        -webkit-transform: translateY(.5em);
+        -moz-transform: translateY(.5em);
+        -ms-transform: translateY(.5em);
+        -o-transform: translateY(.5em);
+        transform: translateY(.5em);
       }
     }
-  }
-  .toggled {
-    .bar {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-      &:last-child {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
+    &.toggled {
+      padding: 1.25em 0.5em;
+      .bar {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        &:last-child {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
       }
     }
   }
@@ -69,7 +75,6 @@
     text-align: right;
     .pure-menu-children {
       background: darken(@unvx-main, 10%);
-      background: fadeout(darken(@unvx-main, 10%), 20%);
       box-shadow: 0 .1em .1em fadeout(black, 90%);
       -webkit-border-radius: .2em;
       -moz-border-radius: .2em;
