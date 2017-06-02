@@ -1,4 +1,0 @@
----
-layout: articlelist
-collection: articles
----

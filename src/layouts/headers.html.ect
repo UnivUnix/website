@@ -20,10 +20,10 @@ layout: default
   <div class="pure-u-1 pure-u-md-4-5">
     <nav class="unvx-main-menu pure-menu pure-menu-horizontal can-transform">
       <ul class="pure-menu-list">
-        <% for item in @getCollection('categories').toJSON() : %>
+        <% for item in @getFilesAtPath('categories/', [title:1]).toJSON() : %>
           <li class="pure-menu-item unvx-category-item">
             <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link <%= "selected" if @document.url is item.url %>">
-              <span><%= item.title %></span>
+              <span><%= item.categoryName %></span>
             </a>
           </li>
         <% end %>

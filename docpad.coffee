@@ -21,20 +21,6 @@ docpadConfig = {
       keywords: """
         Unix, GNU, Linux, Mac, BSD, software, libre, electrónica, impresión, 3D
         """
-      styles: [
-        "/styles/pure-min.css",
-        "/styles/grids-responsive-min.css",
-        "/styles/font-awesome-min.css",
-        "/styles/unvx-ui.css",
-        "https://fonts.googleapis.com/css?family=Lato:300,400,700"
-      ]
-      scripts: [
-        "/scripts/menu-toggle.js",
-        "/scripts/blazy.min.js",
-        "/scripts/ajax-main.js",
-        "/scripts/start-scripts.js"
-      ]
-
     # Helper functions
     getDocumentTitle: ->
       if @document.title
@@ -58,16 +44,12 @@ docpadConfig = {
 
   collections:
     articles: ->
-      @getCollection("documents").findAllLive({relativeOutDirPath: "articles"}, [{date: -1}]).on "add", (model) ->
+      @getCollection("documents").findAllLive({relativeOutDirPath: /articles\/*/ }, [{date: -1}]).on "add", (model) ->
         model.setMetaDefaults({layout: "article"})
 
     pages: ->
       @getCollection("documents").findAllLive({relativeOutDirPath: "pages"}, [{date: -1}]).on "add", (model) ->
         model.setMetaDefaults({layout:"page"})
-
-    categories: ->
-      @getCollection("documents").findAllLive({relativeOutDirPath: "categories"}, [{date: -1}]).on "add", (model) ->
-        model.setMetaDefaults({layout:"articlelist"})
 
   #Environment configuration
   localeCode: 'es'
@@ -89,9 +71,6 @@ docpadConfig = {
       cfgSrc: [
         'api/dpaconfig.json'
       ]
-    assets:
-      retainPath: 'yes'
-      retainName: 'no'
     authentication:
       protectedUrls: ['/protected/*']
       forceServerCreation: true
@@ -125,6 +104,11 @@ docpadConfig = {
             callback: '/auth/github/callback'
             success: '/'
             fail: '/login'
+    category:
+      injectDocumentHelper: (document) ->
+        document.setMeta(
+          layout: 'category'
+        )
     imagin:
       imageMagick: true
       targets:

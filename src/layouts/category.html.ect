@@ -2,9 +2,8 @@
 layout: body
 ---
 
-<% collection = @getCollection(@document.collection).toJSON() %>
 <div class="pure-g">
-<% for item in collection : %>
+<% for item in @getFiles({category: @document.categoryName}, [title:1]).toJSON() : %>
   <div class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
     <article id="<%= item.id %>" class="unvx-article-item">
       <header>
