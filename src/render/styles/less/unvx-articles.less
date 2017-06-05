@@ -20,7 +20,7 @@
   }
   .content {
     padding: .5em 1em .5em 1em;
-    background: @natural-white;
+    background: darken(@natural-white, 5%);
     color: darken(@unvx-alt, 30%);
     a:link {
       text-decoration: none;
@@ -36,8 +36,21 @@
   }
   .related {
     padding: .5em 1em .5em 1em;
-    border-top: .2em solid @unvx-alt;
+    border-top: .2em solid desaturate(@unvx-alt, 70%);
     border-top: .2em solid fadeout(@unvx-alt, 30%);
+    background: darken(@natural-white, 5%);
+    color: darken(@unvx-alt, 30%);
+    a:link {
+      text-decoration: none;
+      color: darken(@unvx-alt, 10%);
+    }
+    a:visited {
+      text-decoration: none;
+      color: darken(@unvx-alt, 20%);
+    }
+    a:hover, a:active {
+      text-decoration:underline;
+    }
   }
   footer {
     padding: .5em 1em .5em 1em;

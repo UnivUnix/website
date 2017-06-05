@@ -20,13 +20,20 @@ layout: default
   <div class="pure-u-1 pure-u-md-4-5">
     <nav class="unvx-main-menu pure-menu pure-menu-horizontal can-transform">
       <ul class="pure-menu-list">
-        <% for item in @getFilesAtPath('categories/', [title:1]).toJSON() : %>
-          <li class="pure-menu-item unvx-category-item">
-            <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link <%= "selected" if @document.url is item.url %>">
-              <span><%= item.categoryName %></span>
-            </a>
-          </li>
-        <% end %>
+        <!-- CATEGORIES -->
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+          <a href="#" class="pure-menu-link">Categorías</a>
+          <ul class="pure-menu-children">
+            <% for item in @getFilesAtPath('categories/', [title:1]).toJSON() : %>
+              <li class="pure-menu-item unvx-category-item">
+                <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link <%= "selected" if @document.url is item.url %>">
+                  <span><%= item.categoryName %></span>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+        <!-- PAGES -->
         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
           <a href="#" class="pure-menu-link">Páginas</a>
           <ul class="pure-menu-children">
