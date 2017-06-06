@@ -44,12 +44,18 @@ docpadConfig = {
 
   collections:
     articles: ->
-      @getCollection("documents").findAllLive({relativeOutDirPath: /articles\/*/ }, [{date: -1}]).on "add", (model) ->
-        model.setMetaDefaults({layout: "article"})
+      @getCollection("documents").findAllLive({
+          relativeOutDirPath: /articles\/*/,
+          isPagedAuto: $ne: true
+        }, [{date: -1}]).on "add", (model) ->
+          model.setMetaDefaults({layout: "article"})
 
     pages: ->
-      @getCollection("documents").findAllLive({relativeOutDirPath: "pages"}, [{date: -1}]).on "add", (model) ->
-        model.setMetaDefaults({layout:"page"})
+      @getCollection("documents").findAllLive({
+          relativeOutDirPath: "pages",
+          isPagedAuto: $ne: true
+        }, [{date: -1}]).on "add", (model) ->
+          model.setMetaDefaults({layout:"page"})
 
   #Environment configuration
   localeCode: 'es'
@@ -104,11 +110,6 @@ docpadConfig = {
             callback: '/auth/github/callback'
             success: '/'
             fail: '/login'
-    category:
-      injectDocumentHelper: (document) ->
-        document.setMeta(
-          layout: 'category'
-        )
     imagin:
       imageMagick: true
       targets:
@@ -147,6 +148,9 @@ docpadConfig = {
           formatted: 'human'
         }
       ]
+    paged:
+      split: true,
+      prefix: 'page'
     related:
       parentCollectionName: 'articles'
     rss:

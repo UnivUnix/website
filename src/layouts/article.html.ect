@@ -12,11 +12,11 @@ layout: body
   <header class="bg-img">
     <h1 class="title"><%= @document.title %></h1>
     <span>
-      <i class="fa fa-calendar"></i>
+      <i class="fa fa-calendar" aria-hidden="true"></i>
       <time datetime="<%= @document.pc %>"><%= @document.human %></time>
     </span>
     <span>
-      <i class="fa fa-user"></i>
+      <i class="fa fa-user" aria-hidden="true"></i>
       Escrito por:
       <% i = 0 %>
       <% while i < @document.authors.length : %>

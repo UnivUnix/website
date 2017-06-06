@@ -80,7 +80,7 @@
       -moz-border-radius: .2em;
       border-radius: .2em;
       -khtml-border-radius: .2em;
-      .pure-menu-item a {
+      .pure-menu-item .pure-menu-link {
         font-weight: 400;
         color: @natural-white;
         background: darken(@unvx-main, 10%);
@@ -92,7 +92,7 @@
         }
       }
     }
-    .pure-menu-item a {
+    .pure-menu-item .pure-menu-link {
       font-weight: 400;
       color: @natural-white;
       background: darken(@unvx-main, 10%);
@@ -138,6 +138,22 @@
       height: 1.9em;
       margin: -.4em 0 -.6em -.5em;
     }
+  }
+}
+
+.pure-menu-has-children > .pure-menu-link {
+  &::after {
+    font-family: "FontAwesome";
+    font-style: normal;
+    content: "\f138";
+  }
+}
+
+.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link {
+  &::after {
+    font-family: "FontAwesome";
+    font-style: normal;
+    content: "\f13a";
   }
 }
 
