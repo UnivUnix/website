@@ -57,6 +57,20 @@ docpadConfig = {
         }, [{date: -1}]).on "add", (model) ->
           model.setMetaDefaults({layout:"page"})
 
+    categories: ->
+      @getCollection("documents").findAllLive({
+          relativeOutDirPath: "categories",
+          isPagedAuto: $ne: true
+        }, [{date: -1}]).on "add", (model) ->
+          model.setMetaDefaults({layout: "category",
+          isPaged: true,
+          pageSize: 8})
+
+    # CATEGORIES
+    ubuntu: ->
+      @getCollection("articles").findAllLive({
+        relativeOutDirPath: /articles\/ubuntu/
+        }, [{date: -1}])
   #Environment configuration
   localeCode: 'es'
 

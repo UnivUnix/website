@@ -11,7 +11,7 @@ layout: body
       </header>
       <div class="unvx-featured-img">
         <a href="<%= @getFullURL(item.url) %>">
-          <img class="b-lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAroAAAGMAQMAAAAP+JN3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwMCAkAimcJagAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAA5SURBVBgZ7cExAQAAAMIg+6deDQ9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMcCiawAAdNN5hUAAAAASUVORK5CYII=" lazy-src="<%= if item.headerImg? then @getThumbnail("/associated-files/" + item.basename + "/" + item.headerImg, "articleList") else @getThumbnail("/img/phnormal.png", "articleList") %>">
+          <img class="b-lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAroAAAGMAQMAAAAP+JN3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwMCAkAimcJagAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAA5SURBVBgZ7cExAQAAAMIg+6deDQ9gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMcCiawAAdNN5hUAAAAASUVORK5CYII=" lazy-src="<%= if item.headerImg? then @getThumbnail("/associated-files/" + item.id + "/" + item.headerImg, "articleList") else @getThumbnail("/img/phnormal.png", "articleList") %>">
         </a>
       </div>
       <footer>

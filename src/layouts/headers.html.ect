@@ -24,10 +24,10 @@ layout: default
         <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
           <a href="#" class="pure-menu-link">Categorías</a>
           <ul class="pure-menu-children">
-            <% for item in @getFilesAtPath('categories/', [title:1]).toJSON() : %>
+            <% for item in @getCollection("categories").toJSON() : %>
               <li class="pure-menu-item unvx-category-item">
                 <a href="<%= @getFullURL(item.url) %>" class="pure-menu-link <%= "selected" if @document.url is item.url %>">
-                  <span><%= item.categoryName %></span>
+                  <span><%= item.title %></span>
                 </a>
               </li>
             <% end %>

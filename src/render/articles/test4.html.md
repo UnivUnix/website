@@ -1,4 +1,0 @@
----
-title: AAAAAAAAAAAAAAAAAAA
-authors: ["A"]
----

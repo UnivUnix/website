@@ -4,7 +4,7 @@ layout: body
 
 <style type="text/css">
   header.bg-img {
-    background: url('<%= if @document.headerImg? then @getThumbnail("/associated-files/" + @document.basename + "/" + @document.headerImg, "articleHeader") else @getThumbnail("/img/phnormal.png", "articleHeader") %>') no-repeat;
+    background: url('<%= if @document.headerImg? then @getThumbnail("/associated-files/" + @document.id + "/" + @document.headerImg, "articleHeader") else @getThumbnail("/img/phnormal.png", "articleHeader") %>') no-repeat;
     background-size: cover;
   }
 </style>
