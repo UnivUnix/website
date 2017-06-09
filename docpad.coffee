@@ -67,9 +67,9 @@ docpadConfig = {
           pageSize: 8})
 
     # CATEGORIES
-    ubuntu: ->
+    guides: ->
       @getCollection("articles").findAllLive({
-        relativeOutDirPath: /articles\/ubuntu/
+        relativeOutDirPath: /articles\/guides/
         }, [{date: -1}])
   #Environment configuration
   localeCode: 'es'
