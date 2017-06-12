@@ -21,7 +21,7 @@ layout: default
     <nav class="unvx-main-menu pure-menu pure-menu-horizontal can-transform">
       <ul class="pure-menu-list">
         <!-- CATEGORIES -->
-        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <li class="pure-menu-item pure-menu-has-children">
           <a href="#" class="pure-menu-link">Categorías</a>
           <ul class="pure-menu-children">
             <% for item in @getCollection("categories").toJSON() : %>
@@ -34,7 +34,7 @@ layout: default
           </ul>
         </li>
         <!-- PAGES -->
-        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <li class="pure-menu-item pure-menu-has-children">
           <a href="#" class="pure-menu-link">Páginas</a>
           <ul class="pure-menu-children">
             <li class="pure-menu-item">
