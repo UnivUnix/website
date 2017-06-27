@@ -1,11 +1,19 @@
-function startJSSignup () {
-  isLogged(function (result) {
-    //Get page content
-    var destHTMLObj = document.querySelector('.unvx-signup .content');
-    var btnArea = destHTMLObj.querySelector('.unvx-btn-area');
+function loadSignupDialog(dstHTMLObj) {
 
+}
+
+function loadMustLoginDialog(dstHTMLObj) {
+
+}
+
+function startJSSignup () {
+  // Get page content
+  var dstHTMLObj = document.querySelector('.unvx-signup .content');
+  isLogged(function (result) {
     if (result) {
-      
+      loadSignupDialog(dstHTMLObj);
+    } else {
+      loadMustLoginDialog(dstHTMLObj);
     }
   });
 }

@@ -25,9 +25,9 @@ function loadLoggedDialog(dstHTMLObj) {
 }
 
 function startJSLogin () {
+  // Get page content
+  var dstHTMLObj = document.querySelector('.unvx-login .content');
   isLogged(function (result) {
-    // Get page content
-    var dstHTMLObj = document.querySelector('.unvx-login .content');
     if (result) {
       loadLoggedDialog(dstHTMLObj);
     } else {
