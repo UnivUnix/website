@@ -1,6 +1,10 @@
 module.exports = function (opts, baseApiUrl) {
   var server = opts.server;
 
+  /**
+   * API: /users/logged
+   * Get logged user data. (Only user logged in web.)
+   */
   server.get(baseApiUrl + '/users/logged', function (req, res) {
     if (req.user) {
       res.json(req.user);

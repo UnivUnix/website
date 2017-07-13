@@ -19,7 +19,7 @@ function loadLoggedDialog(dstHTMLObj) {
   btnArea.innerHTML = '<a class="pure-button pure-button-primary" href="' +
     location.origin + '/">' +
     '<span>Volver</span></a>' +
-    '<a class="pure-button" href="' +
+    '<a class="pure-button pure-button-primary" href="' +
     location.origin + '/logout">' +
     '<span>Cerrar sesión</span></a>';
 }

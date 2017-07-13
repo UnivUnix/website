@@ -3,13 +3,25 @@ function isLogged (callback) {
   req.addEventListener('load', function () {
     var userResponse = JSON.parse(this.responseText);
     if (userResponse.name) {
-      callback(true);
+      return callback(true);
     } else {
-      callback(false);
+      return callback(false);
     }
   });
   req.open('GET', location.origin + '/unvx-api/users/logged');
   req.send();
+}
+
+function getLoggedData (callback) {
+  var req = new XMLHttpRequest();
+  req.addEventListener('load', function () {
+    var loggedUser = JSON.parse(this.responseText);
+    if (loggedUser.name) {
+      return callback(loggedUser, true);
+    } else {
+      return callback(null, false);
+    }
+  });
 }
 
 function getLoggedName (cssSelector) {
