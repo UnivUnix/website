@@ -92,7 +92,7 @@ docpadConfig = {
         'api/dpaconfig.json'
       ]
     authentication:
-      protectedUrls: ['/protected/*']
+      protectedUrls: ['/articles/guides/buenas-practicas-en-nginx-conf']
       forceServerCreation: true
 
       ensureAuthenticated: (req, res, next) ->

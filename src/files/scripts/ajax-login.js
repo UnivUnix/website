@@ -27,8 +27,8 @@ function loadLoggedDialog(dstHTMLObj) {
 function startJSLogin () {
   // Get page content
   var dstHTMLObj = document.querySelector('.unvx-login .content');
-  isLogged(function (result) {
-    if (result) {
+  getLoggedData (function (loggedUser, exists) {
+    if (exists) {
       loadLoggedDialog(dstHTMLObj);
     } else {
       loadLoginDialog(dstHTMLObj);

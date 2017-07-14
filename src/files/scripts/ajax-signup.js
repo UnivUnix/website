@@ -19,8 +19,8 @@ function loadMustLoginDialog(dstHTMLObj) {
 function startJSSignup () {
   // Get page content
   var dstHTMLObj = document.querySelector('.unvx-signup .content');
-  isLogged(function (result) {
-    if (result) {
+  getLoggedData(function (loggedUser, exists) {
+    if (exists) {
       loadSignupDialog(dstHTMLObj);
     } else {
       loadMustLoginDialog(dstHTMLObj);
