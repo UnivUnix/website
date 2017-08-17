@@ -15,7 +15,9 @@ module.exports = function (opts, baseApiUrl) {
     }
   });
 
-  /*server.post(baseApiUrl + '/users', function (req, res, next) {
+  /* (Function created by auth plugin)
+  server.post(baseApiUrl + '/users', function (req, res, next) {
 
-  })*/
+  });
+  */
 };

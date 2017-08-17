@@ -1,6 +1,7 @@
 {
   "baseApiUrl": "/unvx-api",
   "src": [
+  	"api/src/site.js",
     "api/src/users.js"
   ]
 }
