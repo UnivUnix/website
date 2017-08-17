@@ -1,10 +1,8 @@
-function loadSignupDialog(dstHTMLObj) {
+function loadSignupDialog(dstHTMLObj, loggedUser) {
   dstHTMLObj.innerHTML = '<form id="unvx-new-user" method="post" action="' + 
     location.origin + '/createAccount">' +
     '<p>Está a punto de crear una cuenta en UnivUnix.</p>' +
     '';
-  getLoggedData(function (loggedUser, exists) {
-  });
 }
 
 function loadMustLoginDialog(dstHTMLObj) {
@@ -24,7 +22,7 @@ function startJSSignup () {
   var dstHTMLObj = document.querySelector('.unvx-signup .content');
   getLoggedData(function (loggedUser, exists) {
     if (exists) {
-      loadSignupDialog(dstHTMLObj);
+      loadSignupDialog(dstHTMLObj, loggedUser);
     } else {
       loadMustLoginDialog(dstHTMLObj);
     }
