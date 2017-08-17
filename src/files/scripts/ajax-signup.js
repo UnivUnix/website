@@ -1,8 +1,10 @@
 function loadSignupDialog(dstHTMLObj, loggedUser) {
   dstHTMLObj.innerHTML = '<form id="unvx-new-user" method="post" action="' + 
     location.origin + '/createAccount">' +
-    '<p>Está a punto de crear una cuenta en UnivUnix.</p>' +
-    '';
+    '<p>Está a punto de crear una cuenta en UnivUnix con esta sesión:</p>' +
+    '<div class="openid-block">' +
+    '<span class="openid-name">' + loggedUser.service + ' (' + loggedUser.email + ')</span>' +
+    '</div>';
 }
 
 function loadMustLoginDialog(dstHTMLObj) {
