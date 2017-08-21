@@ -16,5 +16,18 @@ window.onload = function () {
     src: 'lazy-src'
   });
 
+  var links = document.querySelector('link');
+  var fontAwesome = document.createElement('link');
+  fontAwesome.rel = 'stylesheet';
+  fontAwesome.href = location.origin + '/styles/font-awesome-min.css';
+  fontAwesome.type = 'text/css';
+  links.parentNode.appendChild(fontAwesome);
+
+  var fontLato = document.createElement('link');
+  fontLato.rel = 'stylesheet';
+  fontLato.href = 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
+  fontLato.type = 'text/css';
+  links.parentNode.appendChild(fontLato);
+
   startJS();
 };

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 
 <head>
     <title>
@@ -27,13 +27,17 @@
     <meta name="msapplication-TileImage" content="<%= @getFullURL("/icons/mstile-144x144.png") %>">
     <meta name="msapplication-config" content="<%= @getFullURL("/icons/browserconfig.xml") %>">
     <meta name="theme-color" content="#00778c">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Styles-->
     <%- @getBlock("styles").toHTML() %>
     <link rel="stylesheet" href="<%= @getFullURL("/styles/pure-min.css") %>">
     <link rel="stylesheet" href="<%= @getFullURL("/styles/grids-responsive-min.css") %>">
-    <link rel="stylesheet" href="<%= @getFullURL("/styles/font-awesome-min.css") %>">
     <link rel="stylesheet" href="<%= @getFullURL("/styles/unvx-ui.css") %>">
+    <noscript>
+        <link rel="stylesheet" href="<%= @getFullURL("/styles/font-awesome-min.css") %>">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    </noscript>
 </head>
 
 <body>
@@ -41,7 +45,6 @@
     <!--Scripts-->
     <script src="<%= @getFullURL("/scripts/menu-toggle.js") %>"></script>
     <script src="<%= @getFullURL("/scripts/blazy.min.js") %>"></script>
-    <script src="<%= @getFullURL("/scripts/webfontloader.min.js") %>"></script>
     <script src="<%= @getFullURL("/scripts/ajax-main.js") %>"></script>
     <script src="<%= @getFullURL("/scripts/start-scripts.js") %>"></script>
     <%-
@@ -49,13 +52,6 @@
       .add(@document.scripts)
       .toHTML()
     %>
-    <script>
-     WebFont.load({
-        google: {
-          families: ['Lato:300,400,700']
-        }
-      });
-    </script>
 </body>
 
 </html>

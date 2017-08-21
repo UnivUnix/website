@@ -1,5 +1,6 @@
 {
 	"name": "UnivUnix",
+	"short_name": "UnivUnix",
 	"icons": [
 		{
 			"src": "\/icons\/android-chrome-36x36.png",
