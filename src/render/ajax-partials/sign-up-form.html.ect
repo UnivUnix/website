@@ -1,0 +1,12 @@
+<form id="unvx-new-user" method="post" action="<%= @getFullURL("/createAccount") %>">
+    <p>Está a punto de crear una cuenta en <%= @site.title %> usando la información obtenida por:</p>
+    <div class="openid-block">
+        <span class="openid-name">loggedUser.service (loggedUser.email)</span>
+    </div>
+    <div class="display-name">
+        <label for="display-name">Display Name</label>
+        <input type="text" value="..." maxlength="30" id="display-name" name="NickName">
+    </div>
+    <input id='confirm' type="submit" value="Create and confirm this account" class="button">
+    <a id='cancel' href="/logout">Cancel</a>
+</form>

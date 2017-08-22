@@ -1,22 +1,21 @@
 function loadSignupDialog(dstHTMLObj, loggedUser) {
-  dstHTMLObj.innerHTML = '<form id="unvx-new-user" method="post" action="' + 
-    location.origin + '/createAccount">' +
-    '<p>Está a punto de crear una cuenta en UnivUnix con esta sesión:</p>' +
-    '<div class="openid-block">' +
-    '<span class="openid-name">' + loggedUser.service + ' (' + loggedUser.email + ')</span>' +
-    '</div>';
+  var req = new XMLHttpRequest();
+  req.addEventListener('load', function () {
+    dstHTMLObj.innerHTML = req.responseText;
+    var openid = document.querySelector('.openid-block .openid-name');
+    openid.innerHTML = loggedUser.service + ' (' + loggedUser.email + ')';
+  });
+  req.open('GET', location.origin + '/ajax-partials/sign-up-form.html');
+  req.send();
 }
 
 function loadMustLoginDialog(dstHTMLObj) {
-  dstHTMLObj.innerHTML = '<p>Debe iniciar sesión antes del registro.</p>' +
-    '<div class="unvx-btn-area">' +
-    '<a class="pure-button pure-button-primary" href="' +
-    location.origin + '/">' +
-    '<span>Volver</span></a>' +
-    '<a class="pure-button pure-button-primary" href="' +
-    location.origin + '/login">' +
-    '<span>Iniciar sesión</span></a>' +
-    '</div>';
+  var req = new XMLHttpRequest();
+  req.addEventListener('load', function () {
+    dstHTMLObj.innerHTML = req.responseText;
+  });
+  req.open('GET', location.origin + '/ajax-partials/must-login.html');
+  req.send();
 }
 
 function startJSSignup () {
