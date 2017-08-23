@@ -103,8 +103,8 @@ docpadConfig = {
       strategies:
         google:
           settings:
-            clientID: environment.google.id
-            clientSecret: environment.google.secret
+            clientID: environment.authentication.google.id
+            clientSecret: environment.authentication.google.secret
             authParameters:
               scope: [
                 'https://www.googleapis.com/auth/userinfo.profile',
@@ -117,8 +117,8 @@ docpadConfig = {
             fail: '/login'
         github:
           settings:
-            clientID: environment.github.id
-            clientSecret: environment.github.secret
+            clientID: environment.authentication.github.id
+            clientSecret: environment.authentication.github.secret
           url:
             auth: '/auth/github'
             callback: '/auth/github/callback'
