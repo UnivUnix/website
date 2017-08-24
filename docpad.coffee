@@ -1,6 +1,7 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
 environment = require('./environment.json')
+mongoose = require('mongoose')
 
 # Define the DocPad Configuration
 docpadConfig = {
@@ -173,6 +174,23 @@ docpadConfig = {
 
   #Event configuration
   events:
+
+    docpadReady: ->
+      docpad = @docpad
+      mongoose.connect('mongodb://localhost/univunix', {
+        useMongoClient: true
+      })
+      db = mongoose.connection
+      db.once('open', () ->
+        docpad.log('info', 'Connected to MongoDB database.')
+      )
+
+    docpadDestroy: ->
+      docpad = @docpad
+      mongoose.disconnect(()->
+        docpad.log('info', 'All MongoDB connections are closed.')
+      )
+
     # Server Extend
     # Used to add our own custom routes to the server before the docpad routes are added
     serverExtend: (opts) ->
