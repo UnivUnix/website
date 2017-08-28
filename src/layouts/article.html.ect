@@ -29,6 +29,9 @@ layout: body
   <section class="content">
     <%- @content %>
   </section>
+  <section class="comments">
+    <h2>Comentarios:</h2>
+  </section>
   <section class="related">
     <h2>También podría interesarte:</h2>
     <ul>
@@ -37,6 +40,20 @@ layout: body
       <% end %>
     </ul>
   </section>
-  <footer>
+  <footer class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <!-- SOCIAL LINKS -->
+      <li class="pure-menu-item">
+        <a href="https://twitter.com/intent/tweet?url=<%= @getFullURL(@document.url) %>&text=<%= @encodeTextToURI(@getDocumentTitle()) %>&via=<%= @site.title %>" class="pure-menu-link" target="noopener">
+          <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="https://plus.google.com/share?url=<%= @getFullURL(@document.url) %>" class="pure-menu-link" target="noopener">
+          <i class="fa fa-fw fa-google-plus-square" aria-hidden="true"></i>
+        </a>
+      </li>
+      <!-- END SOCIAL LINKS -->
+    </ul>
   </footer>
 </article>

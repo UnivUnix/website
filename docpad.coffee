@@ -40,6 +40,9 @@ docpadConfig = {
       .replace(/\s/g, "%20")
       .replace(/&/g, "&amp;")
 
+    encodeTextToURI: (text) ->
+      encodeURIComponent(text)
+
     getFullURL: (relativeURL) ->
       @formatURL(@site.url + relativeURL)
 
@@ -177,7 +180,7 @@ docpadConfig = {
 
     docpadReady: ->
       docpad = @docpad
-      mongoose.connect('mongodb://localhost/univunix', {
+      mongoose.connect(environment.mongodb.connection, {
         useMongoClient: true
       })
       db = mongoose.connection

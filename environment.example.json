@@ -11,6 +11,6 @@
     },
     
     "mongodb": {
-
+        "connection": "mongodb://localhost/univunix"
     }
 }
