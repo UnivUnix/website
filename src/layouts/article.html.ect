@@ -41,6 +41,7 @@ layout: body
     </ul>
   </section>
   <footer class="pure-menu pure-menu-horizontal">
+    <span>Comparte:</span>
     <ul class="pure-menu-list">
       <!-- SOCIAL LINKS -->
       <li class="pure-menu-item">
@@ -51,6 +52,16 @@ layout: body
       <li class="pure-menu-item">
         <a href="https://plus.google.com/share?url=<%= @getFullURL(@document.url) %>" class="pure-menu-link" target="noopener">
           <i class="fa fa-fw fa-google-plus-square" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="https://www.linkedin.com/shareArticle?url=<%= @getFullURL(@document.url)%>&title=<%= @encodeTextToURI(@getDocumentTitle()) %>" class="pure-menu-link" target="noopener">
+          <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="https://telegram.me/share/url?url=<%= @getFullURL(@document.url)%>&text=<%= @encodeTextToURI(@getDocumentTitle()) %>" class="pure-menu-link" target="noopener">
+          <i class="fa fa-fw fa-telegram" aria-hidden="true"></i>
         </a>
       </li>
       <!-- END SOCIAL LINKS -->

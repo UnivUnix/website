@@ -1,3 +1,5 @@
+var User = require('../../models/User.js');
+
 module.exports = function (opts, baseApiUrl) {
   var server = opts.server;
 
@@ -19,6 +21,6 @@ module.exports = function (opts, baseApiUrl) {
    *
    */
   server.post(baseApiUrl + '/users', function (req, res, next) {
-
+    
   });
 };

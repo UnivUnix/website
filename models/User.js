@@ -2,16 +2,15 @@ var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
 
-  our_id: Number,
+  _id: Schema.Types.ObjectId,
   service_id: Number,
   service: String,
-  name: String,
+  username: { type: String, required: true, minlength: 3, maxlength: 20},
   email: String,
-  admin: Boolean,
-  linked_ids: [String],
-  roles: [String],
-  emailValidated: Boolean,
-  lastAccess: Date
+  linked_ids: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  roles: [String], //admin, mod, user, newbies, validated, deactivated
+  lastLogin: { type: Date, default: Date.now },
+  registerDate: { type: Date, required: true, default: Date.now }
 
 });
 
