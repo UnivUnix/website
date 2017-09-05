@@ -2,7 +2,7 @@ function getLoggedData (callback) {
   var req = new XMLHttpRequest();
   req.addEventListener('load', function () {
     var loggedUser = JSON.parse(this.responseText);
-    if (loggedUser.name) {
+    if (loggedUser.service_id) {
       return callback(loggedUser, true);
     } else {
       return callback(null, false);
@@ -16,7 +16,7 @@ function startJSCommon () {
   var selector = document.querySelector('#unvx-user span');
   getLoggedData (function (loggedUser, exists) {
     if (exists) {
-      selector.innerHTML = loggedUser.name;
+      selector.innerHTML = loggedUser.username;
     }
   });
 }

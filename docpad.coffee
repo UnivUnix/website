@@ -1,7 +1,8 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
 environment = require('./environment.json')
-mongoose = require('mongoose')
+mongoose = require('mongoose');
+mongoMembership = require('./auth/mongoMembership')
 
 # Define the DocPad Configuration
 docpadConfig = {
@@ -99,10 +100,11 @@ docpadConfig = {
       protectedUrls: ['/articles/guides/buenas-practicas-en-nginx-conf']
       forceServerCreation: true
 
-      ensureAuthenticated: (req, res, next) ->
-        if req.isAuthenticated()
-          return next()
-        res.redirect('/login')
+      ensureAuthenticated: mongoMembership.ensureAuthenticated
+
+      findOrCreate: mongoMembership.findOrCreate
+
+      getUsers: mongoMembership.getUsers
 
       strategies:
         google:
@@ -217,7 +219,7 @@ docpadConfig = {
           next()
 
       server.get '/' , (req,res,next) ->
-        if req.user and req.user.isNew
+        if req.user and req.user.roles.indexOf('newbies') > -1
           res.redirect('/sign-up')
         else
           next()

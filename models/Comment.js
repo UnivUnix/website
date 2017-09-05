@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var commentSchema = mongoose.Schema({
+var commentSchema = Schema({
 
   _id: Schema.Types.ObjectId,
   parent: { type: Schema.Types.ObjectId, ref: 'Comment' },

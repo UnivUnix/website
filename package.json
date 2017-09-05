@@ -4,6 +4,7 @@
   "description": "UnivUnix website",
   "main": "index.js",
   "dependencies": {
+    "async": "^2.5.0",
     "docpad": "~6.79.4",
     "docpad-plugin-api": "^2.3.0",
     "docpad-plugin-authentication": "~2.5.2",

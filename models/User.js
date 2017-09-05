@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var userSchema = mongoose.Schema({
+var userSchema = Schema({
 
   _id: Schema.Types.ObjectId,
   service_id: Number,

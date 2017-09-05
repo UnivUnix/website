@@ -1,4 +1,4 @@
-var User = require('../../models/User.js');
+var User = require('../../models/User');
 
 module.exports = function (opts, baseApiUrl) {
   var server = opts.server;
