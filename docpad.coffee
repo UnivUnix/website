@@ -1,7 +1,6 @@
 # DocPad Configuration File
 # http://docpad.org/docs/config
 environment = require('./environment.json')
-mongoose = require('mongoose');
 mongoMembership = require('./auth/mongoMembership')
 
 # Define the DocPad Configuration
@@ -179,22 +178,13 @@ docpadConfig = {
 
   #Event configuration
   events:
-
     docpadReady: ->
       docpad = @docpad
-      mongoose.connect(environment.mongodb.connection, {
-        useMongoClient: true
-      })
-      db = mongoose.connection
-      db.once('open', () ->
-        docpad.log('info', 'Connected to MongoDB database.')
-      )
+      mongoMembership.docpadReady docpad, environment
 
     docpadDestroy: ->
       docpad = @docpad
-      mongoose.disconnect(()->
-        docpad.log('info', 'All MongoDB connections are closed.')
-      )
+      mongoMembership.docpadDestroy docpad 
 
     # Server Extend
     # Used to add our own custom routes to the server before the docpad routes are added
@@ -210,7 +200,6 @@ docpadConfig = {
       oldUrls = latestConfig.templateData.site.oldUrls or []
       newUrl = latestConfig.templateData.site.url
 
-      # Redirect any requests accessing one of our
       # sites oldUrls to the new site url
       server.use (req,res,next) ->
         if req.headers.host in oldUrls
@@ -218,11 +207,7 @@ docpadConfig = {
         else
           next()
 
-      server.get '/' , (req,res,next) ->
-        if req.user and req.user.roles.indexOf('newbies') > -1
-          res.redirect('/sign-up')
-        else
-          next()
+      mongoMembership.serverExtend opts
 }
 
 # Export the DocPad Configuration

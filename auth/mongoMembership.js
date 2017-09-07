@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var User = require('../models/User');
 
 function ensureAuthenticated (req, res, next) {
@@ -29,10 +30,42 @@ function findOrCreate (opts, callback) {
   );
 }
 
-function getUsers() {
+function getUsers () {
   console.log('Not implemented.');
+}
+
+function serverExtend (opts) {
+  var server = opts.server;
+
+  server.get('/', function (req,res,next) {
+    if (req.user && req.user.roles.indexOf('newbies') > -1) {
+      res.redirect('/sign-up');
+    }
+    else {
+      next();
+    }
+  });
+}
+
+function docpadReady (docpad, environment) {
+  mongoose.connect(environment.mongodb.connection, {
+    useMongoClient: true
+  });
+  var db = mongoose.connection;
+  db.once('open', function () {
+    docpad.log('info', 'Connected to MongoDB database.');
+  });
+}
+
+function docpadDestroy (docpad) {
+  mongoose.disconnect(function () {
+    docpad.log('info', 'All MongoDB connections are closed.');
+  });
 }
 
 module.exports.ensureAuthenticated = ensureAuthenticated;
 module.exports.findOrCreate = findOrCreate;
 module.exports.getUsers = getUsers;
+module.exports.serverExtend = serverExtend;
+module.exports.docpadReady = docpadReady;
+module.exports.docpadDestroy = docpadDestroy;
