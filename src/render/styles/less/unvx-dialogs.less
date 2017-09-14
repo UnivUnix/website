@@ -14,33 +14,23 @@
       border-bottom: .01em solid;
     }
   }
+
+  .loading {
+    color: @natural-white;
+    background: darken(@natural-white, 5%) url(/img/lines.svg) left repeat;
+    backface-visbility: hidden;
+    height: 150px;
+  }
+
   .content {
     padding: .5em 1em 1em 1em;
     background: darken(@natural-white, 5%);
     color: darken(@unvx-alt, 30%);
+    max-height: 0em;
+    overflow: hidden;
     .unvx-btn-area {
       .pure-button {
         margin: 0em .5em 0 0;
-      }
-    }
-
-    .loading {
-      background-image: url(/img/lines.svg);
-      background-repeat: repeat;
-      height: 9.375em;
-      -webkit-transform: translateZ(0);
-      -moz-transform: translateZ(0);
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      &.fadeout {
-        transition-property: visibility, height;
-        transition-duration: .5s;
-        -webkit-transition-property: visibility, height;
-        -webkit-transition-duration: .5s;
-        -o-transition-property: visibility, height;
-        -o-transition-duration: .5s;
-        visibility: 0;
-        height: 0;
       }
     }
   }

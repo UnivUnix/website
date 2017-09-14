@@ -1,0 +1,30 @@
+.animated {
+	&.resizeOut {
+		animation-name: resizeOut;
+
+	}
+
+	&.resizeIn {
+		animation-name: resizeIn;
+	}
+}
+
+@keyframes resizeOut {
+	from {
+		max-height: 50em;
+	}
+
+	to {
+		max-height: 0em;
+	}
+}
+
+@keyframes resizeIn {
+	from {
+		max-height: 0em;
+	}
+
+	to {
+		max-height: 50em;
+	}
+}

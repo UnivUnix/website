@@ -1,24 +1,45 @@
 function loadSignupDialog(dstHTMLObj, loggedUser) {
   var req = new XMLHttpRequest();
+  var loadingDiv = document.querySelector('.loading');
+
+  /* webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend */
+  function onResizeOut() {
+    dstHTMLObj.innerHTML = req.responseText;
+    dstHTMLObj.classList.add('animated', 'resizeIn');
+    var openid = document.querySelector('.openid-block .openid-name');
+    openid.innerHTML = loggedUser.service + ' (' + loggedUser.email + ')';
+  }
+
   req.addEventListener('load', function () {
-    dstHTMLObj.addEventListener('transitionend', function () {
-      dstHTMLObj.innerHTML = req.responseText;
-      var openid = document.querySelector('.openid-block .openid-name');
-      openid.innerHTML = loggedUser.service + ' (' + loggedUser.email + ')';
-    } ,true);
-    dstHTMLObj.childNodes[1].classList.add('fadeout');
+    loadingDiv.addEventListener('webkitAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('mozAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('MSAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('oAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('animationend', onResizeOut, true);
+    loadingDiv.classList.add('animated', 'resizeOut');
   });
+
   req.open('GET', location.origin + '/ajax-partials/sign-up-form.html');
   req.send();
 }
 
 function loadMustLoginDialog(dstHTMLObj) {
   var req = new XMLHttpRequest();
+  var loadingDiv = document.querySelector('.loading');
+
+  /* webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend */
+  function onResizeOut() {
+    dstHTMLObj.innerHTML = req.responseText;
+    dstHTMLObj.classList.add('animated', 'resizeIn');
+  }
+
   req.addEventListener('load', function () {
-    dstHTMLObj.addEventListener('transitionend', function () {
-      dstHTMLObj.innerHTML = req.responseText;
-    } ,true);
-    dstHTMLObj.childNodes[1].classList.add('fadeout');
+    loadingDiv.addEventListener('webkitAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('mozAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('MSAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('oAnimationEnd', onResizeOut, true);
+    loadingDiv.addEventListener('animationend', onResizeOut, true);
+    loadingDiv.classList.add('animated', 'resizeOut');
   });
   req.open('GET', location.origin + '/ajax-partials/must-login.html');
   req.send();
