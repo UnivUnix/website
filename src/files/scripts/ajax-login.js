@@ -1,7 +1,10 @@
 function loadLoginDialog(dstHTMLObj) {
   var req = new XMLHttpRequest();
   req.addEventListener('load', function () {
-    dstHTMLObj.innerHTML = req.responseText;
+    dstHTMLObj.addEventListener('transitionend', function () {
+      dstHTMLObj.innerHTML = req.responseText;
+    } ,true);
+    dstHTMLObj.childNodes[1].classList.add('fadeout');
   });
   req.open('GET', location.origin + '/ajax-partials/login-form.html');
   req.send();
@@ -10,7 +13,10 @@ function loadLoginDialog(dstHTMLObj) {
 function loadLoggedDialog(dstHTMLObj) {
   var req = new XMLHttpRequest();
   req.addEventListener('load', function () {
-    dstHTMLObj.innerHTML = req.responseText;
+    dstHTMLObj.addEventListener('transitionend', function () {
+      dstHTMLObj.innerHTML = req.responseText;
+    } ,true);
+    dstHTMLObj.childNodes[1].classList.add('fadeout');
   });
   req.open('GET', location.origin + '/ajax-partials/logged-form.html');
   req.send();
