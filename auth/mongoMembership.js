@@ -31,7 +31,6 @@ function findOrCreate (opts, callback) {
 }
 
 function getUsers () {
-  console.log('Not implemented.');
 }
 
 function serverExtend (opts) {

@@ -21,6 +21,15 @@ module.exports = function (opts, baseApiUrl) {
    *
    */
   server.post(baseApiUrl + '/users', function (req, res, next) {
-    
+    // Logged?
+    if (req.user) {
+      // Exists?
+      User.findOne();
+      // Write data to db. Show ok status.
+    } else {
+      res.status(403).json({
+        message: 'Forbidden'
+      });
+    }
   });
 };
