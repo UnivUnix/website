@@ -6,8 +6,10 @@ function loadSignupDialog(dstHTMLObj, loggedUser) {
   function onResizeOut() {
     dstHTMLObj.innerHTML = req.responseText;
     dstHTMLObj.classList.add('animated', 'resizeIn');
-    var openid = document.querySelector('.openid-block .openid-name');
-    openid.innerHTML = loggedUser.service + ' (' + loggedUser.email + ')';
+    var serviceId = document.querySelector('#service-id');
+    var username = document.querySelector('#username');
+    serviceId.innerHTML = '<strong>' + loggedUser.service + ' (' + loggedUser.email + ')</strong>';
+    username.value = loggedUser.username;
   }
 
   req.addEventListener('load', function () {
