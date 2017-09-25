@@ -48,12 +48,10 @@ function startJS () {
   getLoggedData (function (loggedUser, exists) {
     if (exists) {
       selector.innerHTML = loggedUser.username;
+      selector.parentNode.href = '#logout-modal';
     }
   });
   // Optional calls for specific pages.
-  if (typeof startJSLogin === 'function') {
-    startJSLogin();
-  }
   if (typeof startJSSignup === 'function') {
     startJSSignup();
   }

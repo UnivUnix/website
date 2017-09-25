@@ -1,4 +1,76 @@
-.unvx-login, .unvx-signup {
+.unvx-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: darken(@natural-white, 10%);
+  background: fadeout(darken(@natural-white, 10%), 65%);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  &:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+
+  .close {
+    background: @unvx-alt;
+    color: @natural-white;
+    line-height: 1.6em;
+    position: absolute;
+    right: .2em;
+    text-align: center;
+    top: .2em;
+    width: 1.6em;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: .8em;
+    -moz-border-radius: .8em;
+    border-radius: .8em;
+    -moz-box-shadow: .1em .1em .2em fadeout(black, 20%);
+    -webkit-box-shadow: .1em .1em .2em fadeout(black, 20%);
+    box-shadow: .1em .1em .2em fadeout(black, 20%);
+    &:hover { background: @unvx-main; }
+  }
+
+  .unvx-login {
+    width: 60%;
+    position: relative;
+    margin: 10% auto;
+    color: @natural-white;
+    background: darken(@unvx-main, 10%);
+    box-shadow: .1em .1em .2em fadeout(black, 20%);
+    header {
+      padding: 10em 1em .5em 1em;
+      border-bottom: .2em solid desaturate(@unvx-main, 70%);
+      border-bottom: .2em solid fadeout(@natural-white, 30%);
+      background: darken(@unvx-main, 10%);
+      background: fadeout(black, 75%);
+      .title {
+        margin: initial;
+        border-bottom: .01em solid;
+      }
+    }
+    .content {
+      padding: .5em 1em 1em 1em;
+      background: darken(@natural-white, 5%);
+      color: darken(@unvx-alt, 30%);
+      overflow: hidden;
+      .unvx-btn-area {
+        .pure-button {
+          margin: 0em .5em 0 0;
+        }
+      }
+    }
+  }
+}
+
+.unvx-signup {
   color: @natural-white;
   background: darken(@unvx-main, 10%);
   background: fadeout(darken(@unvx-main, 10%), 20%);
@@ -15,18 +87,10 @@
     }
   }
 
-  .loading {
-    color: @natural-white;
-    background: darken(@natural-white, 5%) url(/img/lines.svg) left repeat;
-    backface-visbility: hidden;
-    height: 150px;
-  }
-
   .content {
     padding: .5em 1em 1em 1em;
     background: darken(@natural-white, 5%);
     color: darken(@unvx-alt, 30%);
-    max-height: 0em;
     overflow: hidden;
     .unvx-btn-area {
       .pure-button {

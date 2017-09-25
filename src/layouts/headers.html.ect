@@ -46,7 +46,7 @@ layout: default
         </li>
         <!-- LOGGED USER -->
         <li id="unvx-user" class="pure-menu-item">
-          <a href="/login" class="pure-menu-link">
+          <a href="#login-modal" class="pure-menu-link">
             <i class="fa fa-fw fa-user-circle-o" aria-hidden="true"></i>
             <span>Iniciar sesión</span>
           </a>
@@ -55,12 +55,50 @@ layout: default
     </nav>
   </div>
 </header>
+<div id="login-modal" class="unvx-modal">
+  <div class="unvx-login">
+    <a href="#close" title="Close" class="close">&times;</a>
+    <header>
+      <h2 class="title">Iniciar sesión</h2>
+    </header>
+    <div class="content">
+      <p>Elija el servicio con el que se va a iniciar sesión en <%= @site.title %>:</p>
+      <div class="unvx-btn-area">
+        <a class="pure-button btn-github" href="<%= @getFullURL("/auth/github") %>">
+          <i class="fa fa-fw fa-github" aria-hidden="true"></i><span>Github</span>
+        </a>
+        <a class="pure-button btn-google" href="<%= @getFullURL("/auth/google") %>">
+          <i class="fa fa-fw fa-google" aria-hidden="true"></i><span>Google</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="logout-modal" class="unvx-modal">
+  <div class="unvx-login">
+    <a href="#close" title="Close" class="close">&times;</a>
+    <header>
+      <h2 class="title">Cerrar sesión</h2>
+    </header>
+    <div class="content">
+      <p>Sesión ya iniciada. ¿Desea cerrarla?</p>
+      <div class="unvx-btn-area">
+        <a class="pure-button" href="#close">
+          <span>No</span>
+        </a>
+        <a class="pure-button pure-button-primary" href="<%= @getFullURL("/logout") %>">
+          <span>Sí</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 <%- @content %>
 <footer class="pure-g unvx-footer">
   <div class="pure-u-1">
     <nav class="unvx-footer-menu pure-menu pure-menu-horizontal">
       <!-- COPYRIGHT -->
-      <span class="copyright">&copy; 2016 UnivUnix</span>
+      <span id="copyright">&copy; 2016 UnivUnix</span>
       <ul class="pure-menu-list">
         <!-- SOCIAL LINKS -->
         <li class="pure-menu-item unvx-menu-social-item">
