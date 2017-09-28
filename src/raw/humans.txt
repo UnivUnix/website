@@ -1,0 +1,34 @@
+/* TEAM */
+	Author: Angel Gonzalez
+	Contact: aglezabad[at]gmail.com
+	Google+ profile: https://plus.google.com/113350477294024138382
+	Twitter: @Aglezabad	
+	From: Madrid, Spain
+
+	Author: Fernando Moro
+	Contact: ferthedems[at]univunix.com
+	Google+ profile: https://plus.google.com/112156722898396647740
+	Twitter: @fer2d2
+	From: Madrid, Spain
+
+/* CONTRIBUTORS */
+
+	Author: Kenny Barrera
+	Twitter: @lordofwisdom
+	From: Guatemala
+
+/* THANKS */
+
+	The Twitter-Bootstrap team.
+	The Google and CloudFlare Teams.
+	Guillermo Hernandez Hernandez for helping us with the web design.
+	Alexander Vladimirovich Vorobiev for helping us with accessibility.
+
+/* SITE */
+
+	Last update: Sep 27, 2017
+	Language: Spanish / Castellano.
+	Doctype: HTML5.
+	Standards: HTML5, CSS3.
+	Components: PureCSS.
+	Software: Debian, Docpad, NodeJS, GIMP, Nginx.
