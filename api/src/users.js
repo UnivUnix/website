@@ -24,7 +24,7 @@ module.exports = function (opts, baseApiUrl) {
     // Logged?
     if (req.user) {
       // Exists?
-      User.findOne();
+      User.findOne({'username': req.user.username});
       // Write data to db. Show ok status.
     } else {
       res.status(403).json({
